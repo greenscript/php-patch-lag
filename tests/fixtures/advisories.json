@@ -1,0 +1,279 @@
+[
+ {
+  "ghsa_id": "GHSA-7875-c8px-7q5f",
+  "cve_id": "CVE-2026-93682",
+  "severity": "medium",
+  "state": "published",
+  "published_at": "2026-09-24T10:07:25Z",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+   "score": 5.3
+  },
+  "cvss_severities": {
+   "cvss_v3": {
+    "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+    "score": 5.3
+   },
+   "cvss_v4": {
+    "vector_string": null,
+    "score": null
+   }
+  },
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "php",
+     "name": "ext-standard"
+    },
+    "vulnerable_version_range": "<8.2.34",
+    "patched_versions": "8.2.34",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "php",
+     "name": "ext-standard"
+    },
+    "vulnerable_version_range": "<8.3.35",
+    "patched_versions": "8.3.35",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "php",
+     "name": "ext-standard"
+    },
+    "vulnerable_version_range": "<8.4.26",
+    "patched_versions": "8.4.26",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "php",
+     "name": "ext-standard"
+    },
+    "vulnerable_version_range": "<8.5.11",
+    "patched_versions": "8.5.11",
+    "vulnerable_functions": []
+   }
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-w8hw-w9fx-j79w",
+  "cve_id": "CVE-2026-109618",
+  "severity": "critical",
+  "state": "published",
+  "published_at": "2026-10-21T13:34:25Z",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "cvss_severities": {
+   "cvss_v3": {
+    "vector_string": null,
+    "score": null
+   },
+   "cvss_v4": {
+    "vector_string": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+    "score": 9.2
+   }
+  },
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "php",
+     "name": "php-src"
+    },
+    "vulnerable_version_range": "< 8.2.35",
+    "patched_versions": "8.2.35",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "php",
+     "name": "php-src"
+    },
+    "vulnerable_version_range": "< 8.3.36",
+    "patched_versions": "8.3.36",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "php",
+     "name": "php-src"
+    },
+    "vulnerable_version_range": "< 8.4.27",
+    "patched_versions": "8.4.27",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "php",
+     "name": "php-src"
+    },
+    "vulnerable_version_range": "< 8.5.12",
+    "patched_versions": "8.5.12",
+    "vulnerable_functions": []
+   }
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-6wmf-4rv5-p3rp",
+  "cve_id": "CVE-2026-109619",
+  "severity": "critical",
+  "state": "published",
+  "published_at": "2026-10-21T13:34:13Z",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "cvss_severities": {
+   "cvss_v3": {
+    "vector_string": null,
+    "score": null
+   },
+   "cvss_v4": {
+    "vector_string": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+    "score": 9.2
+   }
+  },
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "php",
+     "name": "php-src"
+    },
+    "vulnerable_version_range": "< 8.2.35",
+    "patched_versions": "8.2.35",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "php",
+     "name": "php-src"
+    },
+    "vulnerable_version_range": "< 8.3.36",
+    "patched_versions": "8.3.36",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "php",
+     "name": "php-src"
+    },
+    "vulnerable_version_range": "< 8.4.27",
+    "patched_versions": "8.4.27",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "php",
+     "name": "php-src"
+    },
+    "vulnerable_version_range": "< 8.5.12",
+    "patched_versions": "8.5.12",
+    "vulnerable_functions": []
+   }
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-ch8v-r6jh-4vvr",
+  "cve_id": null,
+  "severity": "low",
+  "state": "published",
+  "published_at": "2026-09-24T10:07:15Z",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
+   "score": 3.7
+  },
+  "cvss_severities": {
+   "cvss_v3": {
+    "vector_string": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
+    "score": 3.7
+   },
+   "cvss_v4": {
+    "vector_string": null,
+    "score": null
+   }
+  },
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "other",
+     "name": "ext-filter"
+    },
+    "vulnerable_version_range": "<8.2.34",
+    "patched_versions": "8.2.34",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "other",
+     "name": "ext-filter"
+    },
+    "vulnerable_version_range": "<8.3.35",
+    "patched_versions": "8.3.35",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "other",
+     "name": "ext-filter"
+    },
+    "vulnerable_version_range": "<8.4.25",
+    "patched_versions": "8.4.25",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "other",
+     "name": "ext-filter"
+    },
+    "vulnerable_version_range": "<8.5.10",
+    "patched_versions": "8.5.10",
+    "vulnerable_functions": []
+   }
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-x692-q9x7-8c3f",
+  "cve_id": "CVE-2026-17544",
+  "severity": "high",
+  "state": "published",
+  "published_at": "2026-07-30T11:03:07Z",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "cvss_severities": {
+   "cvss_v3": {
+    "vector_string": null,
+    "score": null
+   },
+   "cvss_v4": {
+    "vector_string": null,
+    "score": null
+   }
+  },
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "php",
+     "name": "ext-bcmath"
+    },
+    "vulnerable_version_range": "<8.4.24",
+    "patched_versions": "8.4.24",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "php",
+     "name": "ext-bcmath"
+    },
+    "vulnerable_version_range": "<8.5.9",
+    "patched_versions": "8.5.9",
+    "vulnerable_functions": []
+   }
+  ]
+ }
+]

@@ -1,0 +1,20 @@
+{
+ "8.2.35": {
+  "tags": [
+   "security"
+  ],
+  "date": "21 Oct 2026"
+ },
+ "8.2.34": {
+  "tags": [
+   "security"
+  ],
+  "date": "24 Sep 2026"
+ },
+ "8.2.33": {
+  "tags": [
+   "security"
+  ],
+  "date": "30 Jul 2026"
+ }
+}

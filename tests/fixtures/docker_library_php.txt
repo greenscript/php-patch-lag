@@ -1,0 +1,6 @@
+# this file is generated via https://github.com/docker-library/php/blob/e990b2ed2c33da795c1ab402e5eb47f528753159/generate-stackbrew-library.sh
+
+Tags: 8.2.35-cli-trixie, 8.2-cli-trixie, 8.2.35-trixie, 8.2-trixie, 8.2.35-cli, 8.2-cli, 8.2.35, 8.2
+Architectures: amd64, arm32v5, arm32v7, arm64v8, i386, ppc64le, riscv64, s390x
+GitCommit: f6048b5f6e3c2202ee082665a4ccc0d90de291a3
+Directory: 8.2/trixie/cli

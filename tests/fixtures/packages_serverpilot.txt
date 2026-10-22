@@ -1,0 +1,15 @@
+Package: sp-php8.2
+Architecture: amd64
+Version: 8.2.33-1
+
+Package: sp-php8.2
+Architecture: amd64
+Version: 8.2.34-1
+
+Package: sp-php8.2
+Architecture: amd64
+Version: 8.2.35-1
+
+Package: sp-apache
+Architecture: amd64
+Version: 2.4.59-1

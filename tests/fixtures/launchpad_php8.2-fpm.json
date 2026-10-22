@@ -1,0 +1,89 @@
+{
+ "entries": [
+  {
+   "display_name": "php8.2-fpm 8.2.35-1+ubuntu24.04.1+deb.sury.org+1 in noble arm64",
+   "distro_arch_series_link": "https://api.launchpad.net/1.0/ubuntu/noble/arm64",
+   "binary_package_version": "8.2.35-1+ubuntu24.04.1+deb.sury.org+1",
+   "date_published": "2026-10-21T18:00:56.370837+00:00",
+   "binary_package_name": "php8.2-fpm"
+  },
+  {
+   "display_name": "php8.2-fpm 8.2.35-1+ubuntu24.04.1+deb.sury.org+1 in noble ppc64el",
+   "distro_arch_series_link": "https://api.launchpad.net/1.0/ubuntu/noble/ppc64el",
+   "binary_package_version": "8.2.35-1+ubuntu24.04.1+deb.sury.org+1",
+   "date_published": "2026-10-21T18:00:56.370837+00:00",
+   "binary_package_name": "php8.2-fpm"
+  },
+  {
+   "display_name": "php8.2-fpm 8.2.35-1+ubuntu24.04.1+deb.sury.org+1 in noble armhf",
+   "distro_arch_series_link": "https://api.launchpad.net/1.0/ubuntu/noble/armhf",
+   "binary_package_version": "8.2.35-1+ubuntu24.04.1+deb.sury.org+1",
+   "date_published": "2026-10-21T18:00:56.370837+00:00",
+   "binary_package_name": "php8.2-fpm"
+  },
+  {
+   "display_name": "php8.2-fpm 8.2.35-1+ubuntu24.04.1+deb.sury.org+1 in noble amd64",
+   "distro_arch_series_link": "https://api.launchpad.net/1.0/ubuntu/noble/amd64",
+   "binary_package_version": "8.2.35-1+ubuntu24.04.1+deb.sury.org+1",
+   "date_published": "2026-10-21T18:00:56.370837+00:00",
+   "binary_package_name": "php8.2-fpm"
+  },
+  {
+   "display_name": "php8.2-fpm 8.2.35-1+ubuntu22.04.1+deb.sury.org+1 in jammy ppc64el",
+   "distro_arch_series_link": "https://api.launchpad.net/1.0/ubuntu/jammy/ppc64el",
+   "binary_package_version": "8.2.35-1+ubuntu22.04.1+deb.sury.org+1",
+   "date_published": "2026-10-21T18:00:56.370837+00:00",
+   "binary_package_name": "php8.2-fpm"
+  },
+  {
+   "display_name": "php8.2-fpm 8.2.35-1+ubuntu22.04.1+deb.sury.org+1 in jammy arm64",
+   "distro_arch_series_link": "https://api.launchpad.net/1.0/ubuntu/jammy/arm64",
+   "binary_package_version": "8.2.35-1+ubuntu22.04.1+deb.sury.org+1",
+   "date_published": "2026-10-21T18:00:56.370837+00:00",
+   "binary_package_name": "php8.2-fpm"
+  },
+  {
+   "display_name": "php8.2-fpm 8.2.35-1+ubuntu22.04.1+deb.sury.org+1 in jammy armhf",
+   "distro_arch_series_link": "https://api.launchpad.net/1.0/ubuntu/jammy/armhf",
+   "binary_package_version": "8.2.35-1+ubuntu22.04.1+deb.sury.org+1",
+   "date_published": "2026-10-21T18:00:56.370837+00:00",
+   "binary_package_name": "php8.2-fpm"
+  },
+  {
+   "display_name": "php8.2-fpm 8.2.35-1+ubuntu22.04.1+deb.sury.org+1 in jammy amd64",
+   "distro_arch_series_link": "https://api.launchpad.net/1.0/ubuntu/jammy/amd64",
+   "binary_package_version": "8.2.35-1+ubuntu22.04.1+deb.sury.org+1",
+   "date_published": "2026-10-21T15:46:58.591817+00:00",
+   "binary_package_name": "php8.2-fpm"
+  },
+  {
+   "display_name": "php8.2-fpm 8.2.34-1+ubuntu24.04.1+deb.sury.org+1 in noble ppc64el",
+   "distro_arch_series_link": "https://api.launchpad.net/1.0/ubuntu/noble/ppc64el",
+   "binary_package_version": "8.2.34-1+ubuntu24.04.1+deb.sury.org+1",
+   "date_published": "2026-09-24T18:13:25.847701+00:00",
+   "binary_package_name": "php8.2-fpm"
+  },
+  {
+   "display_name": "php8.2-fpm 8.2.34-1+ubuntu24.04.1+deb.sury.org+1 in noble arm64",
+   "distro_arch_series_link": "https://api.launchpad.net/1.0/ubuntu/noble/arm64",
+   "binary_package_version": "8.2.34-1+ubuntu24.04.1+deb.sury.org+1",
+   "date_published": "2026-09-24T18:13:25.847701+00:00",
+   "binary_package_name": "php8.2-fpm"
+  },
+  {
+   "display_name": "php8.2-fpm 8.2.34-1+ubuntu24.04.1+deb.sury.org+1 in noble armhf",
+   "distro_arch_series_link": "https://api.launchpad.net/1.0/ubuntu/noble/armhf",
+   "binary_package_version": "8.2.34-1+ubuntu24.04.1+deb.sury.org+1",
+   "date_published": "2026-09-24T17:01:31.695494+00:00",
+   "binary_package_name": "php8.2-fpm"
+  },
+  {
+   "display_name": "php8.2-fpm 8.2.34-1+ubuntu24.04.1+deb.sury.org+1 in noble amd64",
+   "distro_arch_series_link": "https://api.launchpad.net/1.0/ubuntu/noble/amd64",
+   "binary_package_version": "8.2.34-1+ubuntu24.04.1+deb.sury.org+1",
+   "date_published": "2026-09-24T17:01:31.695494+00:00",
+   "binary_package_name": "php8.2-fpm"
+  }
+ ],
+ "next_collection_link": "https://api.launchpad.net/1.0/~ondrej/+archive/ubuntu/php?binary_name=php8.2-fpm&exact_match=true&ws.op=getPublishedBinaries&ws.size=12&memo=12&ws.start=12"
+}
