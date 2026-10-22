@@ -4,7 +4,7 @@ How long PHP security fixes take to reach each distribution channel.
 
 For every PHP security release (the set of patched versions per branch published together, for example 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12), this collector records when each channel first made a fixed build available and the delay from the upstream disclosure. Results are stored as plain JSON in `data/` and refreshed hourly by GitHub Actions.
 
-Write-up and charts: https://pressbot.io/php-patch-lag/ (placeholder)
+Charts and tables: https://pressbot.io/php-patch-lag/
 
 ## Data
 
