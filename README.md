@@ -24,7 +24,7 @@ Each release also records `max_severity`, `max_cvss` and per-CVE severity/CVSS (
 
 ## Upstream
 
-Upstream time is the earliest `published_at` among the GitHub Security Advisories of `php/php-src` that belong to the release. Advisories published within 6 hours of each other are grouped into one release; per branch the highest patched version wins. Only advisories with a CVE id count. Versions are cross-checked against the php.net release JSON (`php_net_date`). If an advisory time were unavailable the php.net date would be used with `upstream_precision: "day"`. Backfill covers the last 365 days.
+Upstream time is the earliest `published_at` among the GitHub Security Advisories of `php/php-src` that belong to the release. Each advisory is assigned to the release that first shipped its fix: the earliest php.net date among its patched versions. Per branch the highest patched version of that release wins. If a GitHub advisory was published more than 2 days after that php.net date, it is marked `advisory_published_late` in `cve_details` (with `advisory_published_at` and `fixed_release_date`) and does not move the release's upstream time; a release with only late advisories uses the php.net date (`upstream_precision: "day"`). Advisories whose versions php.net does not list fall back to grouping by publication time (within 6 hours). Only advisories with a CVE id count. Versions are cross-checked against the php.net release JSON (`php_net_date`). If an advisory time were unavailable the php.net date would be used with `upstream_precision: "day"`. Backfill covers the last 365 days.
 
 ## Channels
 

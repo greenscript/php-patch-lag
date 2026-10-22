@@ -12,6 +12,17 @@
       "CVE-2026-109619"
     ],
     "max_cvss": 9.2,
+    "max_severity": "critical",
+    "cve_details": {
+      "CVE-2026-109618": {
+        "severity": "critical",
+        "cvss": 9.2
+      },
+      "CVE-2026-109619": {
+        "severity": "critical",
+        "cvss": 9.2
+      }
+    },
     "upstream_at": "2026-10-21T13:34:13Z",
     "upstream_precision": "exact",
     "channels": {
@@ -296,18 +307,7 @@
         "notes": "No published timestamps: at is when the collector (or a manual observation) first saw the version. A branch with at=null was already present at the collector's first poll (seen_by)."
       }
     },
-    "php_net_date": "2026-10-21",
-    "max_severity": "critical",
-    "cve_details": {
-      "CVE-2026-109618": {
-        "severity": "critical",
-        "cvss": 9.2
-      },
-      "CVE-2026-109619": {
-        "severity": "critical",
-        "cvss": 9.2
-      }
-    }
+    "php_net_date": "2026-10-21"
   },
   {
     "id": "2026-09-24",
@@ -331,6 +331,53 @@
       "CVE-2026-93682"
     ],
     "max_cvss": 7.5,
+    "max_severity": "high",
+    "cve_details": {
+      "CVE-2025-1218": {
+        "severity": "low",
+        "cvss": 3.1
+      },
+      "CVE-2025-14181": {
+        "severity": "medium",
+        "cvss": 6.5
+      },
+      "CVE-2026-17545": {
+        "severity": "medium",
+        "cvss": 6.9
+      },
+      "CVE-2026-6103": {
+        "severity": "medium",
+        "cvss": 4.0
+      },
+      "CVE-2026-91765": {
+        "severity": "high",
+        "cvss": 7.5
+      },
+      "CVE-2026-91766": {
+        "severity": "medium",
+        "cvss": 5.9
+      },
+      "CVE-2026-91767": {
+        "severity": "medium",
+        "cvss": 6.5
+      },
+      "CVE-2026-91768": {
+        "severity": "medium",
+        "cvss": 6.5
+      },
+      "CVE-2026-91769": {
+        "severity": "medium",
+        "cvss": 4.3
+      },
+      "CVE-2026-92842": {
+        "severity": "medium",
+        "cvss": 5.9
+      },
+      "CVE-2026-93682": {
+        "severity": "medium",
+        "cvss": 5.3
+      }
+    },
     "upstream_at": "2026-09-24T10:06:19Z",
     "upstream_precision": "exact",
     "channels": {
@@ -705,54 +752,7 @@
         ]
       }
     },
-    "php_net_date": "2026-09-24",
-    "max_severity": "high",
-    "cve_details": {
-      "CVE-2025-1218": {
-        "severity": "low",
-        "cvss": 3.1
-      },
-      "CVE-2025-14181": {
-        "severity": "medium",
-        "cvss": 6.5
-      },
-      "CVE-2026-17545": {
-        "severity": "medium",
-        "cvss": 6.9
-      },
-      "CVE-2026-6103": {
-        "severity": "medium",
-        "cvss": 4.0
-      },
-      "CVE-2026-91765": {
-        "severity": "high",
-        "cvss": 7.5
-      },
-      "CVE-2026-91766": {
-        "severity": "medium",
-        "cvss": 5.9
-      },
-      "CVE-2026-91767": {
-        "severity": "medium",
-        "cvss": 6.5
-      },
-      "CVE-2026-91768": {
-        "severity": "medium",
-        "cvss": 6.5
-      },
-      "CVE-2026-91769": {
-        "severity": "medium",
-        "cvss": 4.3
-      },
-      "CVE-2026-92842": {
-        "severity": "medium",
-        "cvss": 5.9
-      },
-      "CVE-2026-93682": {
-        "severity": "medium",
-        "cvss": 5.3
-      }
-    }
+    "php_net_date": "2026-09-24"
   },
   {
     "id": "2026-07-30",
@@ -768,6 +768,21 @@
       "CVE-2026-7260"
     ],
     "max_cvss": 5.5,
+    "max_severity": "high",
+    "cve_details": {
+      "CVE-2026-17543": {
+        "severity": "high",
+        "cvss": null
+      },
+      "CVE-2026-17544": {
+        "severity": "high",
+        "cvss": null
+      },
+      "CVE-2026-7260": {
+        "severity": "medium",
+        "cvss": 5.5
+      }
+    },
     "upstream_at": "2026-07-30T11:02:39Z",
     "upstream_precision": "exact",
     "channels": {
@@ -985,22 +1000,7 @@
         ]
       }
     },
-    "php_net_date": "2026-07-30",
-    "max_severity": "high",
-    "cve_details": {
-      "CVE-2026-17543": {
-        "severity": "high",
-        "cvss": null
-      },
-      "CVE-2026-17544": {
-        "severity": "high",
-        "cvss": null
-      },
-      "CVE-2026-7260": {
-        "severity": "medium",
-        "cvss": 5.5
-      }
-    }
+    "php_net_date": "2026-07-30"
   },
   {
     "id": "2026-07-02",
@@ -1011,10 +1011,16 @@
       "8.5": "8.5.8"
     },
     "cves": [
-      "CVE-2026-12184",
       "CVE-2026-14355"
     ],
-    "max_cvss": 8.2,
+    "max_cvss": 4.8,
+    "max_severity": "medium",
+    "cve_details": {
+      "CVE-2026-14355": {
+        "severity": "medium",
+        "cvss": 4.8
+      }
+    },
     "upstream_at": "2026-07-02T16:56:26Z",
     "upstream_precision": "exact",
     "channels": {
@@ -1182,19 +1188,14 @@
         ]
       },
       "debian-trixie": {
-        "first_fix_at": "2026-05-08T18:49:41Z",
-        "first_fix_delay_minutes": -79087,
+        "first_fix_at": "2026-07-04T12:44:39Z",
+        "first_fix_delay_minutes": 2628,
         "at": "2026-07-04T12:44:39Z",
         "delay_minutes": 2628,
         "complete": true,
         "precision": "exact",
         "source": "security-tracker.debian.org CVE pages + DSA/DLA announcement dates (trixie)",
         "per_cve": {
-          "CVE-2026-12184": {
-            "at": "2026-05-08T18:49:41Z",
-            "advisory": "DSA-6256-1",
-            "version": "8.4.21-1~deb13u1"
-          },
           "CVE-2026-14355": {
             "at": "2026-07-04T12:44:39Z",
             "advisory": "DSA-6377-1",
@@ -1202,30 +1203,17 @@
           }
         },
         "notes": "first_fix = earliest DSA/DLA among the CVEs, all fixed = latest once every affected CVE has one; bookworm is covered by DLA (LTS) once it left regular security support",
-        "cves_fixed": 2,
-        "cves_total": 2,
+        "cves_fixed": 1,
+        "cves_total": 1,
         "advisories": [
-          "DSA-6256-1",
           "DSA-6377-1"
         ],
         "versions": [
-          "8.4.21-1~deb13u1",
           "8.4.23-1~deb13u1"
         ]
       }
     },
-    "php_net_date": "2026-07-02",
-    "max_severity": "high",
-    "cve_details": {
-      "CVE-2026-12184": {
-        "severity": "high",
-        "cvss": 8.2
-      },
-      "CVE-2026-14355": {
-        "severity": "medium",
-        "cvss": 4.8
-      }
-    }
+    "php_net_date": "2026-07-02"
   },
   {
     "id": "2026-05-07",
@@ -1237,6 +1225,7 @@
     },
     "cves": [
       "CVE-2025-14179",
+      "CVE-2026-12184",
       "CVE-2026-6104",
       "CVE-2026-6722",
       "CVE-2026-6735",
@@ -1248,6 +1237,56 @@
       "CVE-2026-7568"
     ],
     "max_cvss": 9.4,
+    "max_severity": "high",
+    "cve_details": {
+      "CVE-2025-14179": {
+        "severity": "high",
+        "cvss": 9.2
+      },
+      "CVE-2026-12184": {
+        "severity": "high",
+        "cvss": 8.2,
+        "advisory_published_late": true,
+        "advisory_published_at": "2026-07-02T17:01:28Z",
+        "fixed_release_date": "2026-05-07"
+      },
+      "CVE-2026-6104": {
+        "severity": "medium",
+        "cvss": 6.3
+      },
+      "CVE-2026-6722": {
+        "severity": "high",
+        "cvss": 9.4
+      },
+      "CVE-2026-6735": {
+        "severity": "medium",
+        "cvss": 7.6
+      },
+      "CVE-2026-7258": {
+        "severity": "medium",
+        "cvss": 6.3
+      },
+      "CVE-2026-7259": {
+        "severity": "low",
+        "cvss": null
+      },
+      "CVE-2026-7261": {
+        "severity": "medium",
+        "cvss": 6.3
+      },
+      "CVE-2026-7262": {
+        "severity": "medium",
+        "cvss": 6.3
+      },
+      "CVE-2026-7263": {
+        "severity": "high",
+        "cvss": 8.2
+      },
+      "CVE-2026-7568": {
+        "severity": "low",
+        "cvss": null
+      }
+    },
     "upstream_at": "2026-05-07T12:54:39Z",
     "upstream_precision": "exact",
     "channels": {
@@ -1338,64 +1377,6 @@
           }
         },
         "notes": "Time is the manifest merge; images build shortly after, so availability on Docker Hub may be later"
-      },
-      "ubuntu-noble": {
-        "first_fix_at": "2026-05-28T13:31:37Z",
-        "first_fix_delay_minutes": 30277,
-        "at": "2026-05-28T13:31:37Z",
-        "delay_minutes": 30277,
-        "complete": false,
-        "precision": "exact",
-        "source": "ubuntu.com/security/cves/<CVE>.json (USN published date); php8.3 on noble",
-        "per_cve": {
-          "CVE-2025-14179": {
-            "at": "2026-05-28T13:31:37Z",
-            "advisory": "USN-8336-1",
-            "version": "8.3.6-0ubuntu0.24.04.9"
-          },
-          "CVE-2026-6722": {
-            "at": "2026-05-28T13:31:37Z",
-            "advisory": "USN-8336-1",
-            "version": "8.3.6-0ubuntu0.24.04.9"
-          },
-          "CVE-2026-6735": {
-            "at": "2026-05-28T13:31:37Z",
-            "advisory": "USN-8336-1",
-            "version": "8.3.6-0ubuntu0.24.04.9"
-          },
-          "CVE-2026-7258": {
-            "at": null
-          },
-          "CVE-2026-7259": {
-            "at": "2026-05-28T13:31:37Z",
-            "advisory": "USN-8336-1",
-            "version": "8.3.6-0ubuntu0.24.04.9"
-          },
-          "CVE-2026-7261": {
-            "at": "2026-05-28T13:31:37Z",
-            "advisory": "USN-8336-1",
-            "version": "8.3.6-0ubuntu0.24.04.9"
-          },
-          "CVE-2026-7262": {
-            "at": "2026-05-28T13:31:37Z",
-            "advisory": "USN-8336-1",
-            "version": "8.3.6-0ubuntu0.24.04.9"
-          },
-          "CVE-2026-7568": {
-            "at": "2026-05-28T13:31:37Z",
-            "advisory": "USN-8336-1",
-            "version": "8.3.6-0ubuntu0.24.04.9"
-          }
-        },
-        "notes": "Ubuntu backports fixes into its own version. first_fix = earliest USN among the CVEs, all fixed = latest USN once every affected CVE has one",
-        "cves_fixed": 7,
-        "cves_total": 8,
-        "advisories": [
-          "USN-8336-1"
-        ],
-        "versions": [
-          "8.3.6-0ubuntu0.24.04.9"
-        ]
       },
       "ubuntu-jammy": {
         "first_fix_at": "2026-05-28T13:31:37Z",
@@ -1526,6 +1507,11 @@
             "advisory": "DSA-6256-1",
             "version": "8.4.21-1~deb13u1"
           },
+          "CVE-2026-12184": {
+            "at": "2026-05-08T18:49:41Z",
+            "advisory": "DSA-6256-1",
+            "version": "8.4.21-1~deb13u1"
+          },
           "CVE-2026-6104": {
             "at": "2026-05-08T18:49:41Z",
             "advisory": "DSA-6256-1",
@@ -1573,60 +1559,75 @@
           }
         },
         "notes": "first_fix = earliest DSA/DLA among the CVEs, all fixed = latest once every affected CVE has one; bookworm is covered by DLA (LTS) once it left regular security support",
-        "cves_fixed": 10,
-        "cves_total": 10,
+        "cves_fixed": 11,
+        "cves_total": 11,
         "advisories": [
           "DSA-6256-1"
         ],
         "versions": [
           "8.4.21-1~deb13u1"
         ]
+      },
+      "ubuntu-noble": {
+        "first_fix_at": "2026-05-28T13:31:37Z",
+        "first_fix_delay_minutes": 30277,
+        "at": "2026-05-28T13:31:37Z",
+        "delay_minutes": 30277,
+        "complete": false,
+        "precision": "exact",
+        "source": "ubuntu.com/security/cves/<CVE>.json (USN published date); php8.3 on noble",
+        "per_cve": {
+          "CVE-2025-14179": {
+            "at": "2026-05-28T13:31:37Z",
+            "advisory": "USN-8336-1",
+            "version": "8.3.6-0ubuntu0.24.04.9"
+          },
+          "CVE-2026-6722": {
+            "at": "2026-05-28T13:31:37Z",
+            "advisory": "USN-8336-1",
+            "version": "8.3.6-0ubuntu0.24.04.9"
+          },
+          "CVE-2026-6735": {
+            "at": "2026-05-28T13:31:37Z",
+            "advisory": "USN-8336-1",
+            "version": "8.3.6-0ubuntu0.24.04.9"
+          },
+          "CVE-2026-7258": {
+            "at": null
+          },
+          "CVE-2026-7259": {
+            "at": "2026-05-28T13:31:37Z",
+            "advisory": "USN-8336-1",
+            "version": "8.3.6-0ubuntu0.24.04.9"
+          },
+          "CVE-2026-7261": {
+            "at": "2026-05-28T13:31:37Z",
+            "advisory": "USN-8336-1",
+            "version": "8.3.6-0ubuntu0.24.04.9"
+          },
+          "CVE-2026-7262": {
+            "at": "2026-05-28T13:31:37Z",
+            "advisory": "USN-8336-1",
+            "version": "8.3.6-0ubuntu0.24.04.9"
+          },
+          "CVE-2026-7568": {
+            "at": "2026-05-28T13:31:37Z",
+            "advisory": "USN-8336-1",
+            "version": "8.3.6-0ubuntu0.24.04.9"
+          }
+        },
+        "notes": "Ubuntu backports fixes into its own version. first_fix = earliest USN among the CVEs, all fixed = latest USN once every affected CVE has one",
+        "cves_fixed": 7,
+        "cves_total": 8,
+        "advisories": [
+          "USN-8336-1"
+        ],
+        "versions": [
+          "8.3.6-0ubuntu0.24.04.9"
+        ]
       }
     },
-    "php_net_date": "2026-05-07",
-    "max_severity": "high",
-    "cve_details": {
-      "CVE-2025-14179": {
-        "severity": "high",
-        "cvss": 9.2
-      },
-      "CVE-2026-6104": {
-        "severity": "medium",
-        "cvss": 6.3
-      },
-      "CVE-2026-6722": {
-        "severity": "high",
-        "cvss": 9.4
-      },
-      "CVE-2026-6735": {
-        "severity": "medium",
-        "cvss": 7.6
-      },
-      "CVE-2026-7258": {
-        "severity": "medium",
-        "cvss": 6.3
-      },
-      "CVE-2026-7259": {
-        "severity": "low",
-        "cvss": null
-      },
-      "CVE-2026-7261": {
-        "severity": "medium",
-        "cvss": 6.3
-      },
-      "CVE-2026-7262": {
-        "severity": "medium",
-        "cvss": 6.3
-      },
-      "CVE-2026-7263": {
-        "severity": "high",
-        "cvss": 8.2
-      },
-      "CVE-2026-7568": {
-        "severity": "low",
-        "cvss": null
-      }
-    }
+    "php_net_date": "2026-05-07"
   },
   {
     "id": "2025-12-18",
@@ -1643,6 +1644,21 @@
       "CVE-2025-14180"
     ],
     "max_cvss": 6.5,
+    "max_severity": "medium",
+    "cve_details": {
+      "CVE-2025-14177": {
+        "severity": "medium",
+        "cvss": 6.3
+      },
+      "CVE-2025-14178": {
+        "severity": "medium",
+        "cvss": 6.5
+      },
+      "CVE-2025-14180": {
+        "severity": "medium",
+        "cvss": 6.3
+      }
+    },
     "upstream_at": "2025-12-18T16:10:22Z",
     "upstream_precision": "exact",
     "channels": {
@@ -1883,21 +1899,6 @@
         ]
       }
     },
-    "php_net_date": "2025-12-18",
-    "max_severity": "medium",
-    "cve_details": {
-      "CVE-2025-14177": {
-        "severity": "medium",
-        "cvss": 6.3
-      },
-      "CVE-2025-14178": {
-        "severity": "medium",
-        "cvss": 6.5
-      },
-      "CVE-2025-14180": {
-        "severity": "medium",
-        "cvss": 6.3
-      }
-    }
+    "php_net_date": "2025-12-18"
   }
 ]

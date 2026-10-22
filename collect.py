@@ -9,7 +9,7 @@ import sys
 from datetime import datetime, timedelta, timezone
 
 from php_patch_lag import channels, http
-from php_patch_lag.core import group_advisories, iso, parse_ts
+from php_patch_lag.core import VERSION_RE, branch_of, group_advisories, iso, parse_ts
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(ROOT, "data")
@@ -110,19 +110,15 @@ def main():
         adv = http.get_json(ADVISORIES)
         cutoff = now - timedelta(days=BACKFILL_DAYS)
         by_id = {r["id"]: r for r in releases}
-        new_groups = [g for g in group_advisories(adv) if parse_ts(g["upstream_at"]) >= cutoff]
-        phpnet = phpnet_dates({b for g in new_groups for b in g["branches"]})
+        branches = {branch_of(v) for a in adv for vu in a.get("vulnerabilities") or []
+                    for v in VERSION_RE.findall(vu.get("patched_versions") or "")}
+        phpnet = phpnet_dates(branches)
+        new_groups = [g for g in group_advisories(adv, phpnet) if parse_ts(g["upstream_at"]) >= cutoff]
         for g in new_groups:
             g.setdefault("channels", {})
             dates = {phpnet[v] for v in g["branches"].values() if v in phpnet}
-            if dates and g["upstream_at"][:10] not in dates:
-                latest = max(dates)
-                gap = abs((datetime.fromisoformat(latest) - datetime.fromisoformat(g["upstream_at"][:10])).days)
-                g["php_net_date"] = latest
-                if gap > 1:
-                    log("note: %s php.net date %s differs from advisory date by %dd" % (g["id"], latest, gap))
-            elif dates:
-                g["php_net_date"] = sorted(dates)[0]
+            if dates:
+                g["php_net_date"] = max(dates)
             if g["id"] in by_id:
                 keep = by_id[g["id"]]
                 merge_release(keep, g)

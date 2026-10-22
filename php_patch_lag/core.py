@@ -66,45 +66,84 @@ def advisory_score(adv):
 SEVERITY_RANK = {"low": 1, "medium": 2, "high": 3, "critical": 4}
 
 
-def group_advisories(advisories, gap=GROUP_GAP):
-    """Group published, CVE-bearing advisories released together.
+LATE_DAYS = 2
 
-    Advisories whose published_at is within `gap` of the previous one (sorted
-    by time) belong to one release. Per branch the highest patched version
-    wins. Returns releases oldest-first (caller sorts for output)."""
+
+def _patched_versions(adv):
+    out = []
+    for vuln in adv.get("vulnerabilities") or []:
+        out += VERSION_RE.findall(vuln.get("patched_versions") or "")
+    return out
+
+
+def fix_date(adv, phpnet):
+    """Date (YYYY-MM-DD) of the earliest php.net release containing the fix:
+    the minimum php.net date over the advisory's patched versions, or None."""
+    dates = [phpnet[v] for v in _patched_versions(adv) if v in phpnet]
+    return min(dates) if dates else None
+
+
+def group_advisories(advisories, phpnet=None, gap=GROUP_GAP, late_days=LATE_DAYS):
+    """Group published, CVE-bearing advisories into releases.
+
+    With `phpnet` ({version: 'YYYY-MM-DD'}), an advisory belongs to the release
+    that first shipped its fix (earliest php.net date among its patched
+    versions). If the advisory was published more than `late_days` after that
+    date it is flagged `advisory_published_late` and does not set the
+    release's upstream time; a release with only late advisories gets
+    upstream_at = the php.net date (precision "day"). Advisories whose versions
+    php.net does not know are clustered by published_at within `gap`.
+    Per branch the highest patched version of the release wins.
+    Returns releases oldest-first (caller sorts for output)."""
+    phpnet = phpnet or {}
     items = []
     for a in advisories:
         if a.get("state") != "published" or not a.get("cve_id") or not a.get("published_at"):
             continue
         items.append((parse_ts(a["published_at"]), a))
     items.sort(key=lambda x: x[0])
-    groups, cur, last = [], [], None
+
+    keyed, cluster, last = {}, 0, None
     for ts, a in items:
-        if cur and ts - last > gap:
-            groups.append(cur)
-            cur = []
-        cur.append((ts, a))
-        last = ts
-    if cur:
-        groups.append(cur)
+        fd = fix_date(a, phpnet)
+        if fd:
+            key = fd
+        else:
+            if last is None or ts - last > gap:
+                cluster += 1
+            last = ts
+            key = "u%d" % cluster
+        keyed.setdefault(key, []).append((ts, a, fd))
 
     releases, used = [], {}
-    for g in groups:
-        branches, cves, scores, details = {}, set(), [], {}
-        for _, a in g:
+    for key, members in keyed.items():
+        fd = members[0][2]
+        branches, cves, scores, details, ontime = {}, set(), [], {}, []
+        for ts, a, _ in members:
+            late = bool(fd) and (ts.date() - datetime.fromisoformat(fd).date()).days > late_days
+            if not late:
+                ontime.append(ts)
             cves.add(a["cve_id"])
             s = advisory_score(a)
             if s is not None:
                 scores.append(s)
-            details[a["cve_id"]] = {"severity": a.get("severity"), "cvss": s}
-            for vuln in a.get("vulnerabilities") or []:
-                for v in VERSION_RE.findall(vuln.get("patched_versions") or ""):
-                    b = branch_of(v)
-                    if b not in branches or ver_key(v) > ver_key(branches[b]):
-                        branches[b] = v
+            d = {"severity": a.get("severity"), "cvss": s}
+            if late:
+                d.update({"advisory_published_late": True, "advisory_published_at": iso(ts),
+                          "fixed_release_date": fd})
+            details[a["cve_id"]] = d
+            for v in _patched_versions(a):
+                if fd and phpnet.get(v, fd) != fd:
+                    continue  # shipped in a different (later) release
+                b = branch_of(v)
+                if b not in branches or ver_key(v) > ver_key(branches[b]):
+                    branches[b] = v
         if not branches:
             continue
-        up = g[0][0]
+        if ontime:
+            up, precision = min(ontime), "exact"
+        else:
+            up, precision = datetime.fromisoformat(fd).replace(tzinfo=timezone.utc), "day"
         rid = up.strftime("%Y-%m-%d")
         used[rid] = used.get(rid, 0) + 1
         if used[rid] > 1:
@@ -118,8 +157,9 @@ def group_advisories(advisories, gap=GROUP_GAP):
                                 key=lambda s: SEVERITY_RANK.get(s, 0), default=None),
             "cve_details": dict(sorted(details.items())),
             "upstream_at": iso(up),
-            "upstream_precision": "exact",
+            "upstream_precision": precision,
         })
+    releases.sort(key=lambda r: r["upstream_at"])
     return releases
 
 

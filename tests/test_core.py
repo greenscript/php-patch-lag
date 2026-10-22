@@ -69,6 +69,43 @@ class GroupingTests(unittest.TestCase):
         self.assertEqual(r[1]["id"], "2026-01-01-2")  # same-day id collision gets a suffix
 
 
+class LateAdvisoryTests(unittest.TestCase):
+    """CVE-2026-12184: GHSA published 2026-07-02, but fixed in the 2026-05-07 release."""
+
+    def setUp(self):
+        self.releases = {r["id"]: r for r in group_advisories(jfix("advisories_late.json"), jfix("phpnet_dates_late.json"))}
+
+    def test_late_cve_assigned_to_fixing_release(self):
+        self.assertEqual(sorted(self.releases), ["2026-05-07", "2026-07-02"])
+        self.assertIn("CVE-2026-12184", self.releases["2026-05-07"]["cves"])
+        self.assertNotIn("CVE-2026-12184", self.releases["2026-07-02"]["cves"])
+
+    def test_late_flag_and_dates(self):
+        d = self.releases["2026-05-07"]["cve_details"]["CVE-2026-12184"]
+        self.assertTrue(d["advisory_published_late"])
+        self.assertEqual(d["fixed_release_date"], "2026-05-07")
+        self.assertTrue(d["advisory_published_at"].startswith("2026-07-02"))
+        self.assertNotIn("advisory_published_late", self.releases["2026-05-07"]["cve_details"]["CVE-2026-6722"])
+
+    def test_upstream_time_not_moved_by_late_advisory(self):
+        r = self.releases["2026-05-07"]
+        self.assertTrue(r["upstream_at"].startswith("2026-05-07T12:"))
+        self.assertEqual(r["upstream_precision"], "exact")
+
+    def test_branches_only_from_that_release(self):
+        self.assertEqual(self.releases["2026-05-07"]["branches"],
+                         {"8.2": "8.2.31", "8.3": "8.3.31", "8.4": "8.4.21", "8.5": "8.5.6"})
+        self.assertEqual(self.releases["2026-07-02"]["branches"],
+                         {"8.2": "8.2.32", "8.3": "8.3.32", "8.4": "8.4.23", "8.5": "8.5.8"})
+
+    def test_only_late_advisories_make_day_precision_release(self):
+        adv = [a for a in jfix("advisories_late.json") if a["cve_id"] == "CVE-2026-12184"]
+        r = group_advisories(adv, jfix("phpnet_dates_late.json"))
+        self.assertEqual(r[0]["id"], "2026-05-07")
+        self.assertEqual(r[0]["upstream_at"], "2026-05-07T00:00:00Z")
+        self.assertEqual(r[0]["upstream_precision"], "day")
+
+
 class DelayTests(unittest.TestCase):
     def test_delay(self):
         self.assertEqual(delay_minutes("2026-10-21T18:00:56Z", "2026-10-21T13:34:13Z"), 267)
