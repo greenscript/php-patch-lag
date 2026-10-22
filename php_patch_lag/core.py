@@ -63,6 +63,9 @@ def advisory_score(adv):
     return None
 
 
+SEVERITY_RANK = {"low": 1, "medium": 2, "high": 3, "critical": 4}
+
+
 def group_advisories(advisories, gap=GROUP_GAP):
     """Group published, CVE-bearing advisories released together.
 
@@ -87,12 +90,13 @@ def group_advisories(advisories, gap=GROUP_GAP):
 
     releases, used = [], {}
     for g in groups:
-        branches, cves, scores = {}, set(), []
+        branches, cves, scores, details = {}, set(), [], {}
         for _, a in g:
             cves.add(a["cve_id"])
             s = advisory_score(a)
             if s is not None:
                 scores.append(s)
+            details[a["cve_id"]] = {"severity": a.get("severity"), "cvss": s}
             for vuln in a.get("vulnerabilities") or []:
                 for v in VERSION_RE.findall(vuln.get("patched_versions") or ""):
                     b = branch_of(v)
@@ -110,6 +114,9 @@ def group_advisories(advisories, gap=GROUP_GAP):
             "branches": dict(sorted(branches.items())),
             "cves": sorted(cves),
             "max_cvss": max(scores) if scores else None,
+            "max_severity": max((d["severity"] for d in details.values() if d["severity"]),
+                                key=lambda s: SEVERITY_RANK.get(s, 0), default=None),
+            "cve_details": dict(sorted(details.items())),
             "upstream_at": iso(up),
             "upstream_precision": "exact",
         })
@@ -127,13 +134,17 @@ def latest_of(times):
 
 def make_channel_entry(release, units, expected, precision, source, unit_key="per_branch", notes=None):
     """Assemble a channel entry from per-unit results ({unit: {"at": iso|None, ...}}).
-    `at` is the latest time among units that have one; `complete` is True only
+    `first_fix_at` is the earliest time any unit was fixed, `at` the latest among
+    units that have one ("all fixed" once `complete`); `complete` is True only
     when every expected unit has a time. Returns None if no unit has a time."""
     have = {k: v for k, v in units.items() if v.get("at")}
     if not have:
         return None
     at = latest_of([v["at"] for v in have.values()])
+    first = iso(min(parse_ts(v["at"]) for v in have.values()))
     entry = {
+        "first_fix_at": first,
+        "first_fix_delay_minutes": delay_minutes(first, release["upstream_at"]),
         "at": at,
         "delay_minutes": delay_minutes(at, release["upstream_at"]),
         "complete": all(k in have for k in expected),

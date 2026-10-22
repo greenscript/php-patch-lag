@@ -11,7 +11,16 @@ Write-up and charts: https://pressbot.io/php-patch-lag/ (placeholder)
 - `data/releases.json`: releases, newest first. Each has `id` (date), `branches`, `cves`, `max_cvss`, `upstream_at`, `upstream_precision`, and `channels`.
 - `data/state.json`: bookkeeping (first-seen versions for polled channels, cached advisory dates, recheck times).
 
-A channel entry has `at` (ISO UTC), `delay_minutes` (from `upstream_at`; negative if the channel was ahead of the advisory), `complete`, `precision`, `source`, and a per-unit breakdown (`per_branch`, `per_release` or `per_suite`). `at` is the latest time among the units that have one, i.e. when all of them were fixed. `complete: false` means some branch/release/suite is not fixed yet (or was not observed), so `at` covers only the units that are.
+A channel entry has two times, both ISO UTC with a delay in minutes from `upstream_at` (negative if the channel was ahead of the advisory):
+
+- **First fix** (`first_fix_at`, `first_fix_delay_minutes`): the earliest moment any fixed build or advisory for the release was available. For Ondřej, Docker and ServerPilot that is the first branch; for Ubuntu and Debian it is the first CVE's advisory.
+- **All fixed** (`at`, `delay_minutes`): the latest time among the units that have one, i.e. when every branch (or every affected CVE) was fixed. `complete: false` means some unit is not fixed yet or was not observed, so `at` covers only the units that are.
+
+Entries also carry `precision`, `source` and a per-unit breakdown (`per_branch`, or `per_cve` for Ubuntu and Debian). Ubuntu and Debian entries add `advisories`, `versions`, `cves_fixed` and `cves_total`.
+
+Channels are split per OS release rather than merged, because releases differ a lot: `ubuntu-noble`, `ubuntu-jammy`, `debian-trixie`, `debian-bookworm`, `ondrej-ubuntu-noble`, `ondrej-ubuntu-jammy`, `serverpilot-noble`, `serverpilot-jammy`, plus `docker-official`.
+
+Each release also records `max_severity`, `max_cvss` and per-CVE severity/CVSS (`cve_details`) from the upstream advisories. Distributions typically prioritize by severity, so delays for moderate releases are not comparable to delays for critical ones; read delays next to the severity.
 
 ## Upstream
 
@@ -24,14 +33,14 @@ Upstream time is the earliest `published_at` among the GitHub Security Advisorie
 | `ondrej-ubuntu-noble`, `ondrej-ubuntu-jammy` | Launchpad API, ppa:ondrej/php. First amd64 `date_published` of `php<branch>-fpm` with upstream version >= patched, per branch; the channel time is the latest branch. | exact |
 | `ondrej-debian-bookworm`, `ondrej-debian-trixie` | packages.sury.org `Packages.gz`, which has no timestamps. | hourly-poll |
 | `docker-official` | Commits to `docker-library/official-images` touching `library/php`. First commit whose manifest lists the patched version tag. | exact (manifest merge time) |
-| `ubuntu` | `ubuntu.com/security/cves/<CVE>.json`: package status for `php8.3` (noble) and `php8.1` (jammy) and the earliest USN publication date per CVE. | exact |
-| `debian` | `security-tracker.debian.org` CVE pages for DSA/DLA ids, dated from the debian-security-announce / debian-lts-announce message. Per suite (bookworm, trixie). | exact |
+| `ubuntu-noble`, `ubuntu-jammy` | `ubuntu.com/security/cves/<CVE>.json`: package status for `php8.3` (noble) and `php8.1` (jammy) and the USN publication date per CVE. | exact |
+| `debian-trixie`, `debian-bookworm` | `security-tracker.debian.org` CVE pages for DSA/DLA ids, dated from the debian-security-announce / debian-lts-announce message. | exact |
 | `serverpilot-noble`, `serverpilot-jammy` | `download.serverpilot.io` `Packages.gz`, packages `sp-php8.2` and up. | hourly-poll |
 
 ## Caveats
 
-- **Polled channels** (ServerPilot, Ondrej Debian) publish no timestamps. The collector records the run time at which a fixed version first appears, so the true time is up to one polling interval earlier (the cron runs hourly and GitHub may delay scheduled runs). The first time a package is seen, its existing versions are stored as a baseline with no time; those cannot be dated and appear as `at: null` with `seen_by`. Releases before the collector started polling therefore have no polled-channel data, except manual observations recorded in `state.json` (for example the ServerPilot 2026-10-21 `sp-php8.2` observation, `precision: "5-min-poll"`, source "observed by GreenScript"; other branches for that release were not observed at the time).
-- **Ubuntu and Debian backport** fixes into their own older PHP versions (8.1 on jammy, 8.3 on noble, 8.2 on bookworm, 8.4 on trixie), so version numbers cannot be compared with upstream. Fixes are tracked per CVE: a release or suite is dated when every affected CVE has an advisory (USN, DSA or DLA). CVEs Ubuntu marked `ignored`, or that a release is not affected by, do not block that. Their delays are measured to the advisory, not to the point where an update is installable on a given mirror.
+- **Polled channels** (ServerPilot, Ondrej Debian) publish no timestamps. The collector records the run time at which a fixed version first appears, so the true time is up to one polling interval earlier (the cron runs hourly and GitHub may delay scheduled runs). The first time a package is seen, its existing versions are stored as a baseline with no time; those cannot be dated and appear as `at: null` with `seen_by`. Releases before the collector started polling therefore have no polled-channel data, except manual observations recorded in `state.json` (the ServerPilot 2026-10-21 observation for noble and jammy: all four branches appeared between the 19:45 and 19:50 UTC polls, stored as 19:50 with `precision: "5-min-poll"`, source "observed by GreenScript").
+- **Ubuntu and Debian backport** fixes into their own older PHP versions (8.1 on jammy, 8.3 on noble, 8.2 on bookworm, 8.4 on trixie), so version numbers cannot be compared with upstream. Fixes are tracked per CVE: a release or suite is fully dated (`complete`) when every affected CVE has an advisory (USN, DSA or DLA). CVEs Ubuntu marked `ignored`, or that a release is not affected by, do not block that. Their delays are measured to the advisory, not to the point where an update is installable on a given mirror.
 - **Docker** time is the manifest merge into `official-images`; images are built and pushed shortly after, which this does not measure.
 - **Ondrej Ubuntu PPA** time is when Launchpad published the amd64 binary, not when the build started.
 - A negative delay means the channel's advisory precedes the upstream advisory timestamp (for example coordinated disclosure).

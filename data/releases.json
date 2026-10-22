@@ -16,6 +16,8 @@
     "upstream_precision": "exact",
     "channels": {
       "ondrej-ubuntu-noble": {
+        "first_fix_at": "2026-10-21T18:00:56Z",
+        "first_fix_delay_minutes": 267,
         "at": "2026-10-21T18:00:56Z",
         "delay_minutes": 267,
         "complete": true,
@@ -42,6 +44,8 @@
         "notes": "at = latest branch (all branches fixed); per_branch = first amd64 date_published"
       },
       "ondrej-ubuntu-jammy": {
+        "first_fix_at": "2026-10-21T15:46:58Z",
+        "first_fix_delay_minutes": 133,
         "at": "2026-10-21T18:00:56Z",
         "delay_minutes": 267,
         "complete": true,
@@ -68,6 +72,8 @@
         "notes": "at = latest branch (all branches fixed); per_branch = first amd64 date_published"
       },
       "docker-official": {
+        "first_fix_at": "2026-10-21T15:16:44Z",
+        "first_fix_delay_minutes": 103,
         "at": "2026-10-21T15:16:44Z",
         "delay_minutes": 103,
         "complete": true,
@@ -97,42 +103,132 @@
         },
         "notes": "Time is the manifest merge; images build shortly after, so availability on Docker Hub may be later"
       },
-      "debian": {
+      "ubuntu-noble": {
+        "first_fix_at": "2026-10-21T13:56:19Z",
+        "first_fix_delay_minutes": 22,
+        "at": "2026-10-21T13:56:19Z",
+        "delay_minutes": 22,
+        "complete": true,
+        "precision": "exact",
+        "source": "ubuntu.com/security/cves/<CVE>.json (USN published date); php8.3 on noble",
+        "per_cve": {
+          "CVE-2026-109618": {
+            "at": "2026-10-21T13:56:19Z",
+            "advisory": "USN-8948-1",
+            "version": "8.3.6-0ubuntu0.24.04.13"
+          },
+          "CVE-2026-109619": {
+            "at": "2026-10-21T13:56:19Z",
+            "advisory": "USN-8948-1",
+            "version": "8.3.6-0ubuntu0.24.04.13"
+          }
+        },
+        "notes": "Ubuntu backports fixes into its own version. first_fix = earliest USN among the CVEs, all fixed = latest USN once every affected CVE has one",
+        "cves_fixed": 2,
+        "cves_total": 2,
+        "advisories": [
+          "USN-8948-1"
+        ],
+        "versions": [
+          "8.3.6-0ubuntu0.24.04.13"
+        ]
+      },
+      "ubuntu-jammy": {
+        "first_fix_at": "2026-10-21T13:56:19Z",
+        "first_fix_delay_minutes": 22,
+        "at": "2026-10-21T13:56:19Z",
+        "delay_minutes": 22,
+        "complete": true,
+        "precision": "exact",
+        "source": "ubuntu.com/security/cves/<CVE>.json (USN published date); php8.1 on jammy",
+        "per_cve": {
+          "CVE-2026-109618": {
+            "at": "2026-10-21T13:56:19Z",
+            "advisory": "USN-8948-1",
+            "version": "8.1.2-1ubuntu2.28"
+          },
+          "CVE-2026-109619": {
+            "at": "2026-10-21T13:56:19Z",
+            "advisory": "USN-8948-1",
+            "version": "8.1.2-1ubuntu2.28"
+          }
+        },
+        "notes": "Ubuntu backports fixes into its own version. first_fix = earliest USN among the CVEs, all fixed = latest USN once every affected CVE has one",
+        "cves_fixed": 2,
+        "cves_total": 2,
+        "advisories": [
+          "USN-8948-1"
+        ],
+        "versions": [
+          "8.1.2-1ubuntu2.28"
+        ]
+      },
+      "debian-bookworm": {
+        "first_fix_at": "2026-10-21T14:11:55Z",
+        "first_fix_delay_minutes": 38,
         "at": "2026-10-21T14:11:55Z",
         "delay_minutes": 38,
         "complete": true,
         "precision": "exact",
-        "source": "security-tracker.debian.org CVE pages + DSA/DLA announcement dates",
-        "per_suite": {
-          "bookworm": {
-            "cves_fixed": 2,
-            "cves_total": 2,
-            "advisories": [
-              "DLA-4848-1"
-            ],
-            "versions": [
-              "8.2.35-1~deb12u1"
-            ],
-            "at": "2026-10-21T14:11:55Z"
+        "source": "security-tracker.debian.org CVE pages + DSA/DLA announcement dates (bookworm)",
+        "per_cve": {
+          "CVE-2026-109618": {
+            "at": "2026-10-21T14:11:55Z",
+            "advisory": "DLA-4848-1",
+            "version": "8.2.35-1~deb12u1"
           },
-          "trixie": {
-            "cves_fixed": 2,
-            "cves_total": 2,
-            "advisories": [
-              "DSA-6574-1"
-            ],
-            "versions": [
-              "8.4.27-1~deb13u1"
-            ],
-            "at": "2026-10-21T13:45:09Z"
+          "CVE-2026-109619": {
+            "at": "2026-10-21T14:11:55Z",
+            "advisory": "DLA-4848-1",
+            "version": "8.2.35-1~deb12u1"
           }
         },
-        "notes": "bookworm is covered by DLA (LTS) once it left regular security support; a suite is dated when every affected CVE has a DSA/DLA"
+        "notes": "first_fix = earliest DSA/DLA among the CVEs, all fixed = latest once every affected CVE has one; bookworm is covered by DLA (LTS) once it left regular security support",
+        "cves_fixed": 2,
+        "cves_total": 2,
+        "advisories": [
+          "DLA-4848-1"
+        ],
+        "versions": [
+          "8.2.35-1~deb12u1"
+        ]
+      },
+      "debian-trixie": {
+        "first_fix_at": "2026-10-21T13:45:09Z",
+        "first_fix_delay_minutes": 11,
+        "at": "2026-10-21T13:45:09Z",
+        "delay_minutes": 11,
+        "complete": true,
+        "precision": "exact",
+        "source": "security-tracker.debian.org CVE pages + DSA/DLA announcement dates (trixie)",
+        "per_cve": {
+          "CVE-2026-109618": {
+            "at": "2026-10-21T13:45:09Z",
+            "advisory": "DSA-6574-1",
+            "version": "8.4.27-1~deb13u1"
+          },
+          "CVE-2026-109619": {
+            "at": "2026-10-21T13:45:09Z",
+            "advisory": "DSA-6574-1",
+            "version": "8.4.27-1~deb13u1"
+          }
+        },
+        "notes": "first_fix = earliest DSA/DLA among the CVEs, all fixed = latest once every affected CVE has one; bookworm is covered by DLA (LTS) once it left regular security support",
+        "cves_fixed": 2,
+        "cves_total": 2,
+        "advisories": [
+          "DSA-6574-1"
+        ],
+        "versions": [
+          "8.4.27-1~deb13u1"
+        ]
       },
       "serverpilot-noble": {
+        "first_fix_at": "2026-10-21T19:50:00Z",
+        "first_fix_delay_minutes": 376,
         "at": "2026-10-21T19:50:00Z",
         "delay_minutes": 376,
-        "complete": false,
+        "complete": true,
         "precision": "5-min-poll",
         "source": "observed by GreenScript",
         "per_branch": {
@@ -144,56 +240,74 @@
           },
           "8.3": {
             "version": "8.3.36-1",
-            "at": null,
-            "seen_by": "2026-10-22T00:49:00Z"
+            "at": "2026-10-21T19:50:00Z",
+            "precision": "5-min-poll",
+            "source": "observed by GreenScript"
           },
           "8.4": {
             "version": "8.4.27-1",
-            "at": null,
-            "seen_by": "2026-10-22T00:49:00Z"
+            "at": "2026-10-21T19:50:00Z",
+            "precision": "5-min-poll",
+            "source": "observed by GreenScript"
           },
           "8.5": {
             "version": "8.5.12-1",
-            "at": null,
-            "seen_by": "2026-10-22T00:49:00Z"
+            "at": "2026-10-21T19:50:00Z",
+            "precision": "5-min-poll",
+            "source": "observed by GreenScript"
           }
         },
         "notes": "No published timestamps: at is when the collector (or a manual observation) first saw the version. A branch with at=null was already present at the collector's first poll (seen_by)."
       },
-      "ubuntu": {
-        "at": "2026-10-21T13:56:19Z",
-        "delay_minutes": 22,
+      "serverpilot-jammy": {
+        "first_fix_at": "2026-10-21T19:50:00Z",
+        "first_fix_delay_minutes": 376,
+        "at": "2026-10-21T19:50:00Z",
+        "delay_minutes": 376,
         "complete": true,
-        "precision": "exact",
-        "source": "ubuntu.com/security/cves/<CVE>.json (USN published date); php8.3 on noble, php8.1 on jammy",
-        "per_release": {
-          "noble": {
-            "cves_fixed": 2,
-            "cves_total": 2,
-            "usns": [
-              "USN-8948-1"
-            ],
-            "versions": [
-              "8.3.6-0ubuntu0.24.04.13"
-            ],
-            "at": "2026-10-21T13:56:19Z"
+        "precision": "5-min-poll",
+        "source": "observed by GreenScript",
+        "per_branch": {
+          "8.2": {
+            "version": "8.2.35-1",
+            "at": "2026-10-21T19:50:00Z",
+            "precision": "5-min-poll",
+            "source": "observed by GreenScript"
           },
-          "jammy": {
-            "cves_fixed": 2,
-            "cves_total": 2,
-            "usns": [
-              "USN-8948-1"
-            ],
-            "versions": [
-              "8.1.2-1ubuntu2.28"
-            ],
-            "at": "2026-10-21T13:56:19Z"
+          "8.3": {
+            "version": "8.3.36-1",
+            "at": "2026-10-21T19:50:00Z",
+            "precision": "5-min-poll",
+            "source": "observed by GreenScript"
+          },
+          "8.4": {
+            "version": "8.4.27-1",
+            "at": "2026-10-21T19:50:00Z",
+            "precision": "5-min-poll",
+            "source": "observed by GreenScript"
+          },
+          "8.5": {
+            "version": "8.5.12-1",
+            "at": "2026-10-21T19:50:00Z",
+            "precision": "5-min-poll",
+            "source": "observed by GreenScript"
           }
         },
-        "notes": "Ubuntu backports fixes into its own version; a release is dated when every affected CVE has a USN"
+        "notes": "No published timestamps: at is when the collector (or a manual observation) first saw the version. A branch with at=null was already present at the collector's first poll (seen_by)."
       }
     },
-    "php_net_date": "2026-10-21"
+    "php_net_date": "2026-10-21",
+    "max_severity": "critical",
+    "cve_details": {
+      "CVE-2026-109618": {
+        "severity": "critical",
+        "cvss": 9.2
+      },
+      "CVE-2026-109619": {
+        "severity": "critical",
+        "cvss": 9.2
+      }
+    }
   },
   {
     "id": "2026-09-24",
@@ -221,6 +335,8 @@
     "upstream_precision": "exact",
     "channels": {
       "ondrej-ubuntu-noble": {
+        "first_fix_at": "2026-09-24T17:01:31Z",
+        "first_fix_delay_minutes": 415,
         "at": "2026-09-25T07:27:36Z",
         "delay_minutes": 1281,
         "complete": true,
@@ -247,6 +363,8 @@
         "notes": "at = latest branch (all branches fixed); per_branch = first amd64 date_published"
       },
       "ondrej-ubuntu-jammy": {
+        "first_fix_at": "2026-09-24T17:01:31Z",
+        "first_fix_delay_minutes": 415,
         "at": "2026-09-25T07:27:36Z",
         "delay_minutes": 1281,
         "complete": true,
@@ -273,6 +391,8 @@
         "notes": "at = latest branch (all branches fixed); per_branch = first amd64 date_published"
       },
       "docker-official": {
+        "first_fix_at": "2026-09-24T18:53:56Z",
+        "first_fix_delay_minutes": 528,
         "at": "2026-09-25T17:34:29Z",
         "delay_minutes": 1888,
         "complete": true,
@@ -302,74 +422,337 @@
         },
         "notes": "Time is the manifest merge; images build shortly after, so availability on Docker Hub may be later"
       },
-      "debian": {
-        "at": "2026-10-04T22:55:35Z",
-        "delay_minutes": 15169,
-        "complete": true,
-        "precision": "exact",
-        "source": "security-tracker.debian.org CVE pages + DSA/DLA announcement dates",
-        "per_suite": {
-          "bookworm": {
-            "cves_fixed": 10,
-            "cves_total": 10,
-            "advisories": [
-              "DLA-4819-1"
-            ],
-            "versions": [
-              "8.2.34-1~deb12u1"
-            ],
-            "at": "2026-10-04T22:55:35Z"
-          },
-          "trixie": {
-            "cves_fixed": 10,
-            "cves_total": 10,
-            "advisories": [
-              "DSA-6514-1"
-            ],
-            "versions": [
-              "8.4.26-1~deb13u1"
-            ],
-            "at": "2026-09-25T19:08:32Z"
-          }
-        },
-        "notes": "bookworm is covered by DLA (LTS) once it left regular security support; a suite is dated when every affected CVE has a DSA/DLA"
-      },
-      "ubuntu": {
+      "ubuntu-noble": {
+        "first_fix_at": "2026-10-19T13:25:32Z",
+        "first_fix_delay_minutes": 36199,
         "at": "2026-10-19T13:25:32Z",
         "delay_minutes": 36199,
         "complete": true,
         "precision": "exact",
-        "source": "ubuntu.com/security/cves/<CVE>.json (USN published date); php8.3 on noble, php8.1 on jammy",
-        "per_release": {
-          "noble": {
-            "cves_fixed": 10,
-            "cves_total": 10,
-            "usns": [
-              "USN-8936-1"
-            ],
-            "versions": [
-              "8.3.6-0ubuntu0.24.04.12"
-            ],
-            "cves_ignored": 1,
-            "at": "2026-10-19T13:25:32Z"
+        "source": "ubuntu.com/security/cves/<CVE>.json (USN published date); php8.3 on noble",
+        "per_cve": {
+          "CVE-2025-1218": {
+            "at": "2026-10-19T13:25:32Z",
+            "advisory": "USN-8936-1",
+            "version": "8.3.6-0ubuntu0.24.04.12"
           },
-          "jammy": {
-            "cves_fixed": 10,
-            "cves_total": 10,
-            "usns": [
-              "USN-8936-1"
-            ],
-            "versions": [
-              "8.1.2-1ubuntu2.27"
-            ],
-            "cves_ignored": 1,
-            "at": "2026-10-19T13:25:32Z"
+          "CVE-2025-14181": {
+            "at": "2026-10-19T13:25:32Z",
+            "advisory": "USN-8936-1",
+            "version": "8.3.6-0ubuntu0.24.04.12"
+          },
+          "CVE-2026-6103": {
+            "at": "2026-10-19T13:25:32Z",
+            "advisory": "USN-8936-1",
+            "version": "8.3.6-0ubuntu0.24.04.12"
+          },
+          "CVE-2026-91765": {
+            "at": "2026-10-19T13:25:32Z",
+            "advisory": "USN-8936-1",
+            "version": "8.3.6-0ubuntu0.24.04.12"
+          },
+          "CVE-2026-91766": {
+            "at": "2026-10-19T13:25:32Z",
+            "advisory": "USN-8936-1",
+            "version": "8.3.6-0ubuntu0.24.04.12"
+          },
+          "CVE-2026-91767": {
+            "at": "2026-10-19T13:25:32Z",
+            "advisory": "USN-8936-1",
+            "version": "8.3.6-0ubuntu0.24.04.12"
+          },
+          "CVE-2026-91768": {
+            "at": "2026-10-19T13:25:32Z",
+            "advisory": "USN-8936-1",
+            "version": "8.3.6-0ubuntu0.24.04.12"
+          },
+          "CVE-2026-91769": {
+            "at": "2026-10-19T13:25:32Z",
+            "advisory": "USN-8936-1",
+            "version": "8.3.6-0ubuntu0.24.04.12"
+          },
+          "CVE-2026-92842": {
+            "at": "2026-10-19T13:25:32Z",
+            "advisory": "USN-8936-1",
+            "version": "8.3.6-0ubuntu0.24.04.12"
+          },
+          "CVE-2026-93682": {
+            "at": "2026-10-19T13:25:32Z",
+            "advisory": "USN-8936-1",
+            "version": "8.3.6-0ubuntu0.24.04.12"
           }
         },
-        "notes": "Ubuntu backports fixes into its own version; a release is dated when every affected CVE has a USN"
+        "notes": "Ubuntu backports fixes into its own version. first_fix = earliest USN among the CVEs, all fixed = latest USN once every affected CVE has one",
+        "cves_fixed": 10,
+        "cves_total": 10,
+        "advisories": [
+          "USN-8936-1"
+        ],
+        "versions": [
+          "8.3.6-0ubuntu0.24.04.12"
+        ],
+        "cves_ignored": 1
+      },
+      "ubuntu-jammy": {
+        "first_fix_at": "2026-10-19T13:25:32Z",
+        "first_fix_delay_minutes": 36199,
+        "at": "2026-10-19T13:25:32Z",
+        "delay_minutes": 36199,
+        "complete": true,
+        "precision": "exact",
+        "source": "ubuntu.com/security/cves/<CVE>.json (USN published date); php8.1 on jammy",
+        "per_cve": {
+          "CVE-2025-1218": {
+            "at": "2026-10-19T13:25:32Z",
+            "advisory": "USN-8936-1",
+            "version": "8.1.2-1ubuntu2.27"
+          },
+          "CVE-2025-14181": {
+            "at": "2026-10-19T13:25:32Z",
+            "advisory": "USN-8936-1",
+            "version": "8.1.2-1ubuntu2.27"
+          },
+          "CVE-2026-6103": {
+            "at": "2026-10-19T13:25:32Z",
+            "advisory": "USN-8936-1",
+            "version": "8.1.2-1ubuntu2.27"
+          },
+          "CVE-2026-91765": {
+            "at": "2026-10-19T13:25:32Z",
+            "advisory": "USN-8936-1",
+            "version": "8.1.2-1ubuntu2.27"
+          },
+          "CVE-2026-91766": {
+            "at": "2026-10-19T13:25:32Z",
+            "advisory": "USN-8936-1",
+            "version": "8.1.2-1ubuntu2.27"
+          },
+          "CVE-2026-91767": {
+            "at": "2026-10-19T13:25:32Z",
+            "advisory": "USN-8936-1",
+            "version": "8.1.2-1ubuntu2.27"
+          },
+          "CVE-2026-91768": {
+            "at": "2026-10-19T13:25:32Z",
+            "advisory": "USN-8936-1",
+            "version": "8.1.2-1ubuntu2.27"
+          },
+          "CVE-2026-91769": {
+            "at": "2026-10-19T13:25:32Z",
+            "advisory": "USN-8936-1",
+            "version": "8.1.2-1ubuntu2.27"
+          },
+          "CVE-2026-92842": {
+            "at": "2026-10-19T13:25:32Z",
+            "advisory": "USN-8936-1",
+            "version": "8.1.2-1ubuntu2.27"
+          },
+          "CVE-2026-93682": {
+            "at": "2026-10-19T13:25:32Z",
+            "advisory": "USN-8936-1",
+            "version": "8.1.2-1ubuntu2.27"
+          }
+        },
+        "notes": "Ubuntu backports fixes into its own version. first_fix = earliest USN among the CVEs, all fixed = latest USN once every affected CVE has one",
+        "cves_fixed": 10,
+        "cves_total": 10,
+        "advisories": [
+          "USN-8936-1"
+        ],
+        "versions": [
+          "8.1.2-1ubuntu2.27"
+        ],
+        "cves_ignored": 1
+      },
+      "debian-bookworm": {
+        "first_fix_at": "2026-10-04T22:55:35Z",
+        "first_fix_delay_minutes": 15169,
+        "at": "2026-10-04T22:55:35Z",
+        "delay_minutes": 15169,
+        "complete": true,
+        "precision": "exact",
+        "source": "security-tracker.debian.org CVE pages + DSA/DLA announcement dates (bookworm)",
+        "per_cve": {
+          "CVE-2025-1218": {
+            "at": "2026-10-04T22:55:35Z",
+            "advisory": "DLA-4819-1",
+            "version": "8.2.34-1~deb12u1"
+          },
+          "CVE-2025-14181": {
+            "at": "2026-10-04T22:55:35Z",
+            "advisory": "DLA-4819-1",
+            "version": "8.2.34-1~deb12u1"
+          },
+          "CVE-2026-6103": {
+            "at": "2026-10-04T22:55:35Z",
+            "advisory": "DLA-4819-1",
+            "version": "8.2.34-1~deb12u1"
+          },
+          "CVE-2026-91765": {
+            "at": "2026-10-04T22:55:35Z",
+            "advisory": "DLA-4819-1",
+            "version": "8.2.34-1~deb12u1"
+          },
+          "CVE-2026-91766": {
+            "at": "2026-10-04T22:55:35Z",
+            "advisory": "DLA-4819-1",
+            "version": "8.2.34-1~deb12u1"
+          },
+          "CVE-2026-91767": {
+            "at": "2026-10-04T22:55:35Z",
+            "advisory": "DLA-4819-1",
+            "version": "8.2.34-1~deb12u1"
+          },
+          "CVE-2026-91768": {
+            "at": "2026-10-04T22:55:35Z",
+            "advisory": "DLA-4819-1",
+            "version": "8.2.34-1~deb12u1"
+          },
+          "CVE-2026-91769": {
+            "at": "2026-10-04T22:55:35Z",
+            "advisory": "DLA-4819-1",
+            "version": "8.2.34-1~deb12u1"
+          },
+          "CVE-2026-92842": {
+            "at": "2026-10-04T22:55:35Z",
+            "advisory": "DLA-4819-1",
+            "version": "8.2.34-1~deb12u1"
+          },
+          "CVE-2026-93682": {
+            "at": "2026-10-04T22:55:35Z",
+            "advisory": "DLA-4819-1",
+            "version": "8.2.34-1~deb12u1"
+          }
+        },
+        "notes": "first_fix = earliest DSA/DLA among the CVEs, all fixed = latest once every affected CVE has one; bookworm is covered by DLA (LTS) once it left regular security support",
+        "cves_fixed": 10,
+        "cves_total": 10,
+        "advisories": [
+          "DLA-4819-1"
+        ],
+        "versions": [
+          "8.2.34-1~deb12u1"
+        ]
+      },
+      "debian-trixie": {
+        "first_fix_at": "2026-09-25T19:08:32Z",
+        "first_fix_delay_minutes": 1982,
+        "at": "2026-09-25T19:08:32Z",
+        "delay_minutes": 1982,
+        "complete": true,
+        "precision": "exact",
+        "source": "security-tracker.debian.org CVE pages + DSA/DLA announcement dates (trixie)",
+        "per_cve": {
+          "CVE-2025-1218": {
+            "at": "2026-09-25T19:08:32Z",
+            "advisory": "DSA-6514-1",
+            "version": "8.4.26-1~deb13u1"
+          },
+          "CVE-2025-14181": {
+            "at": "2026-09-25T19:08:32Z",
+            "advisory": "DSA-6514-1",
+            "version": "8.4.26-1~deb13u1"
+          },
+          "CVE-2026-6103": {
+            "at": "2026-09-25T19:08:32Z",
+            "advisory": "DSA-6514-1",
+            "version": "8.4.26-1~deb13u1"
+          },
+          "CVE-2026-91765": {
+            "at": "2026-09-25T19:08:32Z",
+            "advisory": "DSA-6514-1",
+            "version": "8.4.26-1~deb13u1"
+          },
+          "CVE-2026-91766": {
+            "at": "2026-09-25T19:08:32Z",
+            "advisory": "DSA-6514-1",
+            "version": "8.4.26-1~deb13u1"
+          },
+          "CVE-2026-91767": {
+            "at": "2026-09-25T19:08:32Z",
+            "advisory": "DSA-6514-1",
+            "version": "8.4.26-1~deb13u1"
+          },
+          "CVE-2026-91768": {
+            "at": "2026-09-25T19:08:32Z",
+            "advisory": "DSA-6514-1",
+            "version": "8.4.26-1~deb13u1"
+          },
+          "CVE-2026-91769": {
+            "at": "2026-09-25T19:08:32Z",
+            "advisory": "DSA-6514-1",
+            "version": "8.4.26-1~deb13u1"
+          },
+          "CVE-2026-92842": {
+            "at": "2026-09-25T19:08:32Z",
+            "advisory": "DSA-6514-1",
+            "version": "8.4.26-1~deb13u1"
+          },
+          "CVE-2026-93682": {
+            "at": "2026-09-25T19:08:32Z",
+            "advisory": "DSA-6514-1",
+            "version": "8.4.26-1~deb13u1"
+          }
+        },
+        "notes": "first_fix = earliest DSA/DLA among the CVEs, all fixed = latest once every affected CVE has one; bookworm is covered by DLA (LTS) once it left regular security support",
+        "cves_fixed": 10,
+        "cves_total": 10,
+        "advisories": [
+          "DSA-6514-1"
+        ],
+        "versions": [
+          "8.4.26-1~deb13u1"
+        ]
       }
     },
-    "php_net_date": "2026-09-24"
+    "php_net_date": "2026-09-24",
+    "max_severity": "high",
+    "cve_details": {
+      "CVE-2025-1218": {
+        "severity": "low",
+        "cvss": 3.1
+      },
+      "CVE-2025-14181": {
+        "severity": "medium",
+        "cvss": 6.5
+      },
+      "CVE-2026-17545": {
+        "severity": "medium",
+        "cvss": 6.9
+      },
+      "CVE-2026-6103": {
+        "severity": "medium",
+        "cvss": 4.0
+      },
+      "CVE-2026-91765": {
+        "severity": "high",
+        "cvss": 7.5
+      },
+      "CVE-2026-91766": {
+        "severity": "medium",
+        "cvss": 5.9
+      },
+      "CVE-2026-91767": {
+        "severity": "medium",
+        "cvss": 6.5
+      },
+      "CVE-2026-91768": {
+        "severity": "medium",
+        "cvss": 6.5
+      },
+      "CVE-2026-91769": {
+        "severity": "medium",
+        "cvss": 4.3
+      },
+      "CVE-2026-92842": {
+        "severity": "medium",
+        "cvss": 5.9
+      },
+      "CVE-2026-93682": {
+        "severity": "medium",
+        "cvss": 5.3
+      }
+    }
   },
   {
     "id": "2026-07-30",
@@ -389,6 +772,8 @@
     "upstream_precision": "exact",
     "channels": {
       "ondrej-ubuntu-noble": {
+        "first_fix_at": "2026-07-30T17:27:32Z",
+        "first_fix_delay_minutes": 385,
         "at": "2026-07-30T17:59:13Z",
         "delay_minutes": 417,
         "complete": true,
@@ -415,6 +800,8 @@
         "notes": "at = latest branch (all branches fixed); per_branch = first amd64 date_published"
       },
       "ondrej-ubuntu-jammy": {
+        "first_fix_at": "2026-07-30T17:02:44Z",
+        "first_fix_delay_minutes": 360,
         "at": "2026-07-30T17:27:32Z",
         "delay_minutes": 385,
         "complete": true,
@@ -441,6 +828,8 @@
         "notes": "at = latest branch (all branches fixed); per_branch = first amd64 date_published"
       },
       "docker-official": {
+        "first_fix_at": "2026-07-30T22:25:33Z",
+        "first_fix_delay_minutes": 683,
         "at": "2026-07-30T22:25:33Z",
         "delay_minutes": 683,
         "complete": true,
@@ -470,72 +859,148 @@
         },
         "notes": "Time is the manifest merge; images build shortly after, so availability on Docker Hub may be later"
       },
-      "debian": {
-        "at": "2026-08-11T22:07:30Z",
-        "delay_minutes": 17945,
-        "complete": true,
-        "precision": "exact",
-        "source": "security-tracker.debian.org CVE pages + DSA/DLA announcement dates",
-        "per_suite": {
-          "bookworm": {
-            "cves_fixed": 2,
-            "cves_total": 2,
-            "advisories": [
-              "DLA-4732-1"
-            ],
-            "versions": [
-              "8.2.33-1~deb12u1"
-            ],
-            "at": "2026-08-11T22:07:30Z"
-          },
-          "trixie": {
-            "cves_fixed": 3,
-            "cves_total": 3,
-            "advisories": [
-              "DSA-6406-1"
-            ],
-            "versions": [
-              "8.4.24-1~deb13u1"
-            ],
-            "at": "2026-07-31T21:17:27Z"
-          }
-        },
-        "notes": "bookworm is covered by DLA (LTS) once it left regular security support; a suite is dated when every affected CVE has a DSA/DLA"
-      },
-      "ubuntu": {
+      "ubuntu-noble": {
+        "first_fix_at": "2026-09-10T11:48:08Z",
+        "first_fix_delay_minutes": 60525,
         "at": "2026-09-10T11:48:08Z",
         "delay_minutes": 60525,
         "complete": true,
         "precision": "exact",
-        "source": "ubuntu.com/security/cves/<CVE>.json (USN published date); php8.3 on noble, php8.1 on jammy",
-        "per_release": {
-          "noble": {
-            "cves_fixed": 2,
-            "cves_total": 2,
-            "usns": [
-              "USN-8743-1"
-            ],
-            "versions": [
-              "8.3.6-0ubuntu0.24.04.11"
-            ],
-            "at": "2026-09-10T11:48:08Z"
+        "source": "ubuntu.com/security/cves/<CVE>.json (USN published date); php8.3 on noble",
+        "per_cve": {
+          "CVE-2026-17543": {
+            "at": "2026-09-10T11:48:08Z",
+            "advisory": "USN-8743-1",
+            "version": "8.3.6-0ubuntu0.24.04.11"
           },
-          "jammy": {
-            "cves_fixed": 2,
-            "cves_total": 2,
-            "usns": [
-              "USN-8743-1"
-            ],
-            "versions": [
-              "8.1.2-1ubuntu2.26"
-            ],
-            "at": "2026-09-10T11:48:08Z"
+          "CVE-2026-7260": {
+            "at": "2026-09-10T11:48:08Z",
+            "advisory": "USN-8743-1",
+            "version": "8.3.6-0ubuntu0.24.04.11"
           }
         },
-        "notes": "Ubuntu backports fixes into its own version; a release is dated when every affected CVE has a USN"
+        "notes": "Ubuntu backports fixes into its own version. first_fix = earliest USN among the CVEs, all fixed = latest USN once every affected CVE has one",
+        "cves_fixed": 2,
+        "cves_total": 2,
+        "advisories": [
+          "USN-8743-1"
+        ],
+        "versions": [
+          "8.3.6-0ubuntu0.24.04.11"
+        ]
+      },
+      "ubuntu-jammy": {
+        "first_fix_at": "2026-09-10T11:48:08Z",
+        "first_fix_delay_minutes": 60525,
+        "at": "2026-09-10T11:48:08Z",
+        "delay_minutes": 60525,
+        "complete": true,
+        "precision": "exact",
+        "source": "ubuntu.com/security/cves/<CVE>.json (USN published date); php8.1 on jammy",
+        "per_cve": {
+          "CVE-2026-17543": {
+            "at": "2026-09-10T11:48:08Z",
+            "advisory": "USN-8743-1",
+            "version": "8.1.2-1ubuntu2.26"
+          },
+          "CVE-2026-7260": {
+            "at": "2026-09-10T11:48:08Z",
+            "advisory": "USN-8743-1",
+            "version": "8.1.2-1ubuntu2.26"
+          }
+        },
+        "notes": "Ubuntu backports fixes into its own version. first_fix = earliest USN among the CVEs, all fixed = latest USN once every affected CVE has one",
+        "cves_fixed": 2,
+        "cves_total": 2,
+        "advisories": [
+          "USN-8743-1"
+        ],
+        "versions": [
+          "8.1.2-1ubuntu2.26"
+        ]
+      },
+      "debian-bookworm": {
+        "first_fix_at": "2026-08-11T22:07:30Z",
+        "first_fix_delay_minutes": 17945,
+        "at": "2026-08-11T22:07:30Z",
+        "delay_minutes": 17945,
+        "complete": true,
+        "precision": "exact",
+        "source": "security-tracker.debian.org CVE pages + DSA/DLA announcement dates (bookworm)",
+        "per_cve": {
+          "CVE-2026-17543": {
+            "at": "2026-08-11T22:07:30Z",
+            "advisory": "DLA-4732-1",
+            "version": "8.2.33-1~deb12u1"
+          },
+          "CVE-2026-7260": {
+            "at": "2026-08-11T22:07:30Z",
+            "advisory": "DLA-4732-1",
+            "version": "8.2.33-1~deb12u1"
+          }
+        },
+        "notes": "first_fix = earliest DSA/DLA among the CVEs, all fixed = latest once every affected CVE has one; bookworm is covered by DLA (LTS) once it left regular security support",
+        "cves_fixed": 2,
+        "cves_total": 2,
+        "advisories": [
+          "DLA-4732-1"
+        ],
+        "versions": [
+          "8.2.33-1~deb12u1"
+        ]
+      },
+      "debian-trixie": {
+        "first_fix_at": "2026-07-31T21:17:27Z",
+        "first_fix_delay_minutes": 2055,
+        "at": "2026-07-31T21:17:27Z",
+        "delay_minutes": 2055,
+        "complete": true,
+        "precision": "exact",
+        "source": "security-tracker.debian.org CVE pages + DSA/DLA announcement dates (trixie)",
+        "per_cve": {
+          "CVE-2026-17543": {
+            "at": "2026-07-31T21:17:27Z",
+            "advisory": "DSA-6406-1",
+            "version": "8.4.24-1~deb13u1"
+          },
+          "CVE-2026-17544": {
+            "at": "2026-07-31T21:17:27Z",
+            "advisory": "DSA-6406-1",
+            "version": "8.4.24-1~deb13u1"
+          },
+          "CVE-2026-7260": {
+            "at": "2026-07-31T21:17:27Z",
+            "advisory": "DSA-6406-1",
+            "version": "8.4.24-1~deb13u1"
+          }
+        },
+        "notes": "first_fix = earliest DSA/DLA among the CVEs, all fixed = latest once every affected CVE has one; bookworm is covered by DLA (LTS) once it left regular security support",
+        "cves_fixed": 3,
+        "cves_total": 3,
+        "advisories": [
+          "DSA-6406-1"
+        ],
+        "versions": [
+          "8.4.24-1~deb13u1"
+        ]
       }
     },
-    "php_net_date": "2026-07-30"
+    "php_net_date": "2026-07-30",
+    "max_severity": "high",
+    "cve_details": {
+      "CVE-2026-17543": {
+        "severity": "high",
+        "cvss": null
+      },
+      "CVE-2026-17544": {
+        "severity": "high",
+        "cvss": null
+      },
+      "CVE-2026-7260": {
+        "severity": "medium",
+        "cvss": 5.5
+      }
+    }
   },
   {
     "id": "2026-07-02",
@@ -554,6 +1019,8 @@
     "upstream_precision": "exact",
     "channels": {
       "ondrej-ubuntu-noble": {
+        "first_fix_at": "2026-07-02T17:32:28Z",
+        "first_fix_delay_minutes": 36,
         "at": "2026-07-03T15:36:09Z",
         "delay_minutes": 1360,
         "complete": true,
@@ -580,6 +1047,8 @@
         "notes": "at = latest branch (all branches fixed); per_branch = first amd64 date_published"
       },
       "ondrej-ubuntu-jammy": {
+        "first_fix_at": "2026-07-02T20:56:03Z",
+        "first_fix_delay_minutes": 240,
         "at": "2026-07-05T08:22:13Z",
         "delay_minutes": 3806,
         "complete": true,
@@ -606,6 +1075,8 @@
         "notes": "at = latest branch (all branches fixed); per_branch = first amd64 date_published"
       },
       "docker-official": {
+        "first_fix_at": "2026-07-02T20:24:18Z",
+        "first_fix_delay_minutes": 208,
         "at": "2026-07-02T20:24:18Z",
         "delay_minutes": 208,
         "complete": true,
@@ -635,74 +1106,126 @@
         },
         "notes": "Time is the manifest merge; images build shortly after, so availability on Docker Hub may be later"
       },
-      "debian": {
-        "at": "2026-07-04T14:23:19Z",
-        "delay_minutes": 2727,
-        "complete": true,
-        "precision": "exact",
-        "source": "security-tracker.debian.org CVE pages + DSA/DLA announcement dates",
-        "per_suite": {
-          "bookworm": {
-            "cves_fixed": 1,
-            "cves_total": 1,
-            "advisories": [
-              "DLA-4669-1"
-            ],
-            "versions": [
-              "8.2.32-1~deb12u1"
-            ],
-            "at": "2026-07-04T14:23:19Z"
-          },
-          "trixie": {
-            "cves_fixed": 2,
-            "cves_total": 2,
-            "advisories": [
-              "DSA-6256-1",
-              "DSA-6377-1"
-            ],
-            "versions": [
-              "8.4.21-1~deb13u1",
-              "8.4.23-1~deb13u1"
-            ],
-            "at": "2026-07-04T12:44:39Z"
-          }
-        },
-        "notes": "bookworm is covered by DLA (LTS) once it left regular security support; a suite is dated when every affected CVE has a DSA/DLA"
-      },
-      "ubuntu": {
+      "ubuntu-noble": {
+        "first_fix_at": "2026-07-20T12:52:37Z",
+        "first_fix_delay_minutes": 25676,
         "at": "2026-07-20T12:52:37Z",
         "delay_minutes": 25676,
         "complete": true,
         "precision": "exact",
-        "source": "ubuntu.com/security/cves/<CVE>.json (USN published date); php8.3 on noble, php8.1 on jammy",
-        "per_release": {
-          "noble": {
-            "cves_fixed": 1,
-            "cves_total": 1,
-            "usns": [
-              "USN-8564-1"
-            ],
-            "versions": [
-              "8.3.6-0ubuntu0.24.04.10"
-            ],
-            "at": "2026-07-20T12:52:37Z"
-          },
-          "jammy": {
-            "cves_fixed": 1,
-            "cves_total": 1,
-            "usns": [
-              "USN-8564-1"
-            ],
-            "versions": [
-              "8.1.2-1ubuntu2.25"
-            ],
-            "at": "2026-07-20T12:52:37Z"
+        "source": "ubuntu.com/security/cves/<CVE>.json (USN published date); php8.3 on noble",
+        "per_cve": {
+          "CVE-2026-14355": {
+            "at": "2026-07-20T12:52:37Z",
+            "advisory": "USN-8564-1",
+            "version": "8.3.6-0ubuntu0.24.04.10"
           }
         },
-        "notes": "Ubuntu backports fixes into its own version; a release is dated when every affected CVE has a USN"
+        "notes": "Ubuntu backports fixes into its own version. first_fix = earliest USN among the CVEs, all fixed = latest USN once every affected CVE has one",
+        "cves_fixed": 1,
+        "cves_total": 1,
+        "advisories": [
+          "USN-8564-1"
+        ],
+        "versions": [
+          "8.3.6-0ubuntu0.24.04.10"
+        ]
+      },
+      "ubuntu-jammy": {
+        "first_fix_at": "2026-07-20T12:52:37Z",
+        "first_fix_delay_minutes": 25676,
+        "at": "2026-07-20T12:52:37Z",
+        "delay_minutes": 25676,
+        "complete": true,
+        "precision": "exact",
+        "source": "ubuntu.com/security/cves/<CVE>.json (USN published date); php8.1 on jammy",
+        "per_cve": {
+          "CVE-2026-14355": {
+            "at": "2026-07-20T12:52:37Z",
+            "advisory": "USN-8564-1",
+            "version": "8.1.2-1ubuntu2.25"
+          }
+        },
+        "notes": "Ubuntu backports fixes into its own version. first_fix = earliest USN among the CVEs, all fixed = latest USN once every affected CVE has one",
+        "cves_fixed": 1,
+        "cves_total": 1,
+        "advisories": [
+          "USN-8564-1"
+        ],
+        "versions": [
+          "8.1.2-1ubuntu2.25"
+        ]
+      },
+      "debian-bookworm": {
+        "first_fix_at": "2026-07-04T14:23:19Z",
+        "first_fix_delay_minutes": 2727,
+        "at": "2026-07-04T14:23:19Z",
+        "delay_minutes": 2727,
+        "complete": true,
+        "precision": "exact",
+        "source": "security-tracker.debian.org CVE pages + DSA/DLA announcement dates (bookworm)",
+        "per_cve": {
+          "CVE-2026-14355": {
+            "at": "2026-07-04T14:23:19Z",
+            "advisory": "DLA-4669-1",
+            "version": "8.2.32-1~deb12u1"
+          }
+        },
+        "notes": "first_fix = earliest DSA/DLA among the CVEs, all fixed = latest once every affected CVE has one; bookworm is covered by DLA (LTS) once it left regular security support",
+        "cves_fixed": 1,
+        "cves_total": 1,
+        "advisories": [
+          "DLA-4669-1"
+        ],
+        "versions": [
+          "8.2.32-1~deb12u1"
+        ]
+      },
+      "debian-trixie": {
+        "first_fix_at": "2026-05-08T18:49:41Z",
+        "first_fix_delay_minutes": -79087,
+        "at": "2026-07-04T12:44:39Z",
+        "delay_minutes": 2628,
+        "complete": true,
+        "precision": "exact",
+        "source": "security-tracker.debian.org CVE pages + DSA/DLA announcement dates (trixie)",
+        "per_cve": {
+          "CVE-2026-12184": {
+            "at": "2026-05-08T18:49:41Z",
+            "advisory": "DSA-6256-1",
+            "version": "8.4.21-1~deb13u1"
+          },
+          "CVE-2026-14355": {
+            "at": "2026-07-04T12:44:39Z",
+            "advisory": "DSA-6377-1",
+            "version": "8.4.23-1~deb13u1"
+          }
+        },
+        "notes": "first_fix = earliest DSA/DLA among the CVEs, all fixed = latest once every affected CVE has one; bookworm is covered by DLA (LTS) once it left regular security support",
+        "cves_fixed": 2,
+        "cves_total": 2,
+        "advisories": [
+          "DSA-6256-1",
+          "DSA-6377-1"
+        ],
+        "versions": [
+          "8.4.21-1~deb13u1",
+          "8.4.23-1~deb13u1"
+        ]
       }
     },
-    "php_net_date": "2026-07-02"
+    "php_net_date": "2026-07-02",
+    "max_severity": "high",
+    "cve_details": {
+      "CVE-2026-12184": {
+        "severity": "high",
+        "cvss": 8.2
+      },
+      "CVE-2026-14355": {
+        "severity": "medium",
+        "cvss": 4.8
+      }
+    }
   },
   {
     "id": "2026-05-07",
@@ -729,6 +1252,8 @@
     "upstream_precision": "exact",
     "channels": {
       "ondrej-ubuntu-noble": {
+        "first_fix_at": "2026-05-07T20:55:56Z",
+        "first_fix_delay_minutes": 481,
         "at": "2026-05-07T22:31:43Z",
         "delay_minutes": 577,
         "complete": true,
@@ -755,6 +1280,8 @@
         "notes": "at = latest branch (all branches fixed); per_branch = first amd64 date_published"
       },
       "ondrej-ubuntu-jammy": {
+        "first_fix_at": "2026-05-07T20:31:09Z",
+        "first_fix_delay_minutes": 456,
         "at": "2026-05-07T20:55:56Z",
         "delay_minutes": 481,
         "complete": true,
@@ -781,6 +1308,8 @@
         "notes": "at = latest branch (all branches fixed); per_branch = first amd64 date_published"
       },
       "docker-official": {
+        "first_fix_at": "2026-05-07T16:32:52Z",
+        "first_fix_delay_minutes": 218,
         "at": "2026-05-07T16:32:52Z",
         "delay_minutes": 218,
         "complete": true,
@@ -810,72 +1339,294 @@
         },
         "notes": "Time is the manifest merge; images build shortly after, so availability on Docker Hub may be later"
       },
-      "debian": {
-        "at": "2026-05-08T18:49:41Z",
-        "delay_minutes": 1795,
-        "complete": true,
-        "precision": "exact",
-        "source": "security-tracker.debian.org CVE pages + DSA/DLA announcement dates",
-        "per_suite": {
-          "bookworm": {
-            "cves_fixed": 8,
-            "cves_total": 8,
-            "advisories": [
-              "DSA-6255-1"
-            ],
-            "versions": [
-              "8.2.31-1~deb12u1"
-            ],
-            "at": "2026-05-08T18:49:03Z"
-          },
-          "trixie": {
-            "cves_fixed": 10,
-            "cves_total": 10,
-            "advisories": [
-              "DSA-6256-1"
-            ],
-            "versions": [
-              "8.4.21-1~deb13u1"
-            ],
-            "at": "2026-05-08T18:49:41Z"
-          }
-        },
-        "notes": "bookworm is covered by DLA (LTS) once it left regular security support; a suite is dated when every affected CVE has a DSA/DLA"
-      },
-      "ubuntu": {
+      "ubuntu-noble": {
+        "first_fix_at": "2026-05-28T13:31:37Z",
+        "first_fix_delay_minutes": 30277,
         "at": "2026-05-28T13:31:37Z",
         "delay_minutes": 30277,
         "complete": false,
         "precision": "exact",
-        "source": "ubuntu.com/security/cves/<CVE>.json (USN published date); php8.3 on noble, php8.1 on jammy",
-        "per_release": {
-          "noble": {
-            "cves_fixed": 7,
-            "cves_total": 8,
-            "usns": [
-              "USN-8336-1"
-            ],
-            "versions": [
-              "8.3.6-0ubuntu0.24.04.9"
-            ],
-            "at_partial": "2026-05-28T13:31:37Z"
+        "source": "ubuntu.com/security/cves/<CVE>.json (USN published date); php8.3 on noble",
+        "per_cve": {
+          "CVE-2025-14179": {
+            "at": "2026-05-28T13:31:37Z",
+            "advisory": "USN-8336-1",
+            "version": "8.3.6-0ubuntu0.24.04.9"
           },
-          "jammy": {
-            "cves_fixed": 7,
-            "cves_total": 7,
-            "usns": [
-              "USN-8336-1"
-            ],
-            "versions": [
-              "8.1.2-1ubuntu2.24"
-            ],
-            "at": "2026-05-28T13:31:37Z"
+          "CVE-2026-6722": {
+            "at": "2026-05-28T13:31:37Z",
+            "advisory": "USN-8336-1",
+            "version": "8.3.6-0ubuntu0.24.04.9"
+          },
+          "CVE-2026-6735": {
+            "at": "2026-05-28T13:31:37Z",
+            "advisory": "USN-8336-1",
+            "version": "8.3.6-0ubuntu0.24.04.9"
+          },
+          "CVE-2026-7258": {
+            "at": null
+          },
+          "CVE-2026-7259": {
+            "at": "2026-05-28T13:31:37Z",
+            "advisory": "USN-8336-1",
+            "version": "8.3.6-0ubuntu0.24.04.9"
+          },
+          "CVE-2026-7261": {
+            "at": "2026-05-28T13:31:37Z",
+            "advisory": "USN-8336-1",
+            "version": "8.3.6-0ubuntu0.24.04.9"
+          },
+          "CVE-2026-7262": {
+            "at": "2026-05-28T13:31:37Z",
+            "advisory": "USN-8336-1",
+            "version": "8.3.6-0ubuntu0.24.04.9"
+          },
+          "CVE-2026-7568": {
+            "at": "2026-05-28T13:31:37Z",
+            "advisory": "USN-8336-1",
+            "version": "8.3.6-0ubuntu0.24.04.9"
           }
         },
-        "notes": "Ubuntu backports fixes into its own version; a release is dated when every affected CVE has a USN"
+        "notes": "Ubuntu backports fixes into its own version. first_fix = earliest USN among the CVEs, all fixed = latest USN once every affected CVE has one",
+        "cves_fixed": 7,
+        "cves_total": 8,
+        "advisories": [
+          "USN-8336-1"
+        ],
+        "versions": [
+          "8.3.6-0ubuntu0.24.04.9"
+        ]
+      },
+      "ubuntu-jammy": {
+        "first_fix_at": "2026-05-28T13:31:37Z",
+        "first_fix_delay_minutes": 30277,
+        "at": "2026-05-28T13:31:37Z",
+        "delay_minutes": 30277,
+        "complete": true,
+        "precision": "exact",
+        "source": "ubuntu.com/security/cves/<CVE>.json (USN published date); php8.1 on jammy",
+        "per_cve": {
+          "CVE-2025-14179": {
+            "at": "2026-05-28T13:31:37Z",
+            "advisory": "USN-8336-1",
+            "version": "8.1.2-1ubuntu2.24"
+          },
+          "CVE-2026-6722": {
+            "at": "2026-05-28T13:31:37Z",
+            "advisory": "USN-8336-1",
+            "version": "8.1.2-1ubuntu2.24"
+          },
+          "CVE-2026-6735": {
+            "at": "2026-05-28T13:31:37Z",
+            "advisory": "USN-8336-1",
+            "version": "8.1.2-1ubuntu2.24"
+          },
+          "CVE-2026-7259": {
+            "at": "2026-05-28T13:31:37Z",
+            "advisory": "USN-8336-1",
+            "version": "8.1.2-1ubuntu2.24"
+          },
+          "CVE-2026-7261": {
+            "at": "2026-05-28T13:31:37Z",
+            "advisory": "USN-8336-1",
+            "version": "8.1.2-1ubuntu2.24"
+          },
+          "CVE-2026-7262": {
+            "at": "2026-05-28T13:31:37Z",
+            "advisory": "USN-8336-1",
+            "version": "8.1.2-1ubuntu2.24"
+          },
+          "CVE-2026-7568": {
+            "at": "2026-05-28T13:31:37Z",
+            "advisory": "USN-8336-1",
+            "version": "8.1.2-1ubuntu2.24"
+          }
+        },
+        "notes": "Ubuntu backports fixes into its own version. first_fix = earliest USN among the CVEs, all fixed = latest USN once every affected CVE has one",
+        "cves_fixed": 7,
+        "cves_total": 7,
+        "advisories": [
+          "USN-8336-1"
+        ],
+        "versions": [
+          "8.1.2-1ubuntu2.24"
+        ]
+      },
+      "debian-bookworm": {
+        "first_fix_at": "2026-05-08T18:49:03Z",
+        "first_fix_delay_minutes": 1794,
+        "at": "2026-05-08T18:49:03Z",
+        "delay_minutes": 1794,
+        "complete": true,
+        "precision": "exact",
+        "source": "security-tracker.debian.org CVE pages + DSA/DLA announcement dates (bookworm)",
+        "per_cve": {
+          "CVE-2025-14179": {
+            "at": "2026-05-08T18:49:03Z",
+            "advisory": "DSA-6255-1",
+            "version": "8.2.31-1~deb12u1"
+          },
+          "CVE-2026-6722": {
+            "at": "2026-05-08T18:49:03Z",
+            "advisory": "DSA-6255-1",
+            "version": "8.2.31-1~deb12u1"
+          },
+          "CVE-2026-6735": {
+            "at": "2026-05-08T18:49:03Z",
+            "advisory": "DSA-6255-1",
+            "version": "8.2.31-1~deb12u1"
+          },
+          "CVE-2026-7258": {
+            "at": "2026-05-08T18:49:03Z",
+            "advisory": "DSA-6255-1",
+            "version": "8.2.31-1~deb12u1"
+          },
+          "CVE-2026-7259": {
+            "at": "2026-05-08T18:49:03Z",
+            "advisory": "DSA-6255-1",
+            "version": "8.2.31-1~deb12u1"
+          },
+          "CVE-2026-7261": {
+            "at": "2026-05-08T18:49:03Z",
+            "advisory": "DSA-6255-1",
+            "version": "8.2.31-1~deb12u1"
+          },
+          "CVE-2026-7262": {
+            "at": "2026-05-08T18:49:03Z",
+            "advisory": "DSA-6255-1",
+            "version": "8.2.31-1~deb12u1"
+          },
+          "CVE-2026-7568": {
+            "at": "2026-05-08T18:49:03Z",
+            "advisory": "DSA-6255-1",
+            "version": "8.2.31-1~deb12u1"
+          }
+        },
+        "notes": "first_fix = earliest DSA/DLA among the CVEs, all fixed = latest once every affected CVE has one; bookworm is covered by DLA (LTS) once it left regular security support",
+        "cves_fixed": 8,
+        "cves_total": 8,
+        "advisories": [
+          "DSA-6255-1"
+        ],
+        "versions": [
+          "8.2.31-1~deb12u1"
+        ]
+      },
+      "debian-trixie": {
+        "first_fix_at": "2026-05-08T18:49:41Z",
+        "first_fix_delay_minutes": 1795,
+        "at": "2026-05-08T18:49:41Z",
+        "delay_minutes": 1795,
+        "complete": true,
+        "precision": "exact",
+        "source": "security-tracker.debian.org CVE pages + DSA/DLA announcement dates (trixie)",
+        "per_cve": {
+          "CVE-2025-14179": {
+            "at": "2026-05-08T18:49:41Z",
+            "advisory": "DSA-6256-1",
+            "version": "8.4.21-1~deb13u1"
+          },
+          "CVE-2026-6104": {
+            "at": "2026-05-08T18:49:41Z",
+            "advisory": "DSA-6256-1",
+            "version": "8.4.21-1~deb13u1"
+          },
+          "CVE-2026-6722": {
+            "at": "2026-05-08T18:49:41Z",
+            "advisory": "DSA-6256-1",
+            "version": "8.4.21-1~deb13u1"
+          },
+          "CVE-2026-6735": {
+            "at": "2026-05-08T18:49:41Z",
+            "advisory": "DSA-6256-1",
+            "version": "8.4.21-1~deb13u1"
+          },
+          "CVE-2026-7258": {
+            "at": "2026-05-08T18:49:41Z",
+            "advisory": "DSA-6256-1",
+            "version": "8.4.21-1~deb13u1"
+          },
+          "CVE-2026-7259": {
+            "at": "2026-05-08T18:49:41Z",
+            "advisory": "DSA-6256-1",
+            "version": "8.4.21-1~deb13u1"
+          },
+          "CVE-2026-7261": {
+            "at": "2026-05-08T18:49:41Z",
+            "advisory": "DSA-6256-1",
+            "version": "8.4.21-1~deb13u1"
+          },
+          "CVE-2026-7262": {
+            "at": "2026-05-08T18:49:41Z",
+            "advisory": "DSA-6256-1",
+            "version": "8.4.21-1~deb13u1"
+          },
+          "CVE-2026-7263": {
+            "at": "2026-05-08T18:49:41Z",
+            "advisory": "DSA-6256-1",
+            "version": "8.4.21-1~deb13u1"
+          },
+          "CVE-2026-7568": {
+            "at": "2026-05-08T18:49:41Z",
+            "advisory": "DSA-6256-1",
+            "version": "8.4.21-1~deb13u1"
+          }
+        },
+        "notes": "first_fix = earliest DSA/DLA among the CVEs, all fixed = latest once every affected CVE has one; bookworm is covered by DLA (LTS) once it left regular security support",
+        "cves_fixed": 10,
+        "cves_total": 10,
+        "advisories": [
+          "DSA-6256-1"
+        ],
+        "versions": [
+          "8.4.21-1~deb13u1"
+        ]
       }
     },
-    "php_net_date": "2026-05-07"
+    "php_net_date": "2026-05-07",
+    "max_severity": "high",
+    "cve_details": {
+      "CVE-2025-14179": {
+        "severity": "high",
+        "cvss": 9.2
+      },
+      "CVE-2026-6104": {
+        "severity": "medium",
+        "cvss": 6.3
+      },
+      "CVE-2026-6722": {
+        "severity": "high",
+        "cvss": 9.4
+      },
+      "CVE-2026-6735": {
+        "severity": "medium",
+        "cvss": 7.6
+      },
+      "CVE-2026-7258": {
+        "severity": "medium",
+        "cvss": 6.3
+      },
+      "CVE-2026-7259": {
+        "severity": "low",
+        "cvss": null
+      },
+      "CVE-2026-7261": {
+        "severity": "medium",
+        "cvss": 6.3
+      },
+      "CVE-2026-7262": {
+        "severity": "medium",
+        "cvss": 6.3
+      },
+      "CVE-2026-7263": {
+        "severity": "high",
+        "cvss": 8.2
+      },
+      "CVE-2026-7568": {
+        "severity": "low",
+        "cvss": null
+      }
+    }
   },
   {
     "id": "2025-12-18",
@@ -896,6 +1647,8 @@
     "upstream_precision": "exact",
     "channels": {
       "ondrej-ubuntu-noble": {
+        "first_fix_at": "2025-12-19T00:44:46Z",
+        "first_fix_delay_minutes": 514,
         "at": "2025-12-19T01:55:52Z",
         "delay_minutes": 586,
         "complete": true,
@@ -926,6 +1679,8 @@
         "notes": "at = latest branch (all branches fixed); per_branch = first amd64 date_published"
       },
       "ondrej-ubuntu-jammy": {
+        "first_fix_at": "2025-12-19T00:44:46Z",
+        "first_fix_delay_minutes": 514,
         "at": "2025-12-19T01:29:50Z",
         "delay_minutes": 559,
         "complete": true,
@@ -956,6 +1711,8 @@
         "notes": "at = latest branch (all branches fixed); per_branch = first amd64 date_published"
       },
       "docker-official": {
+        "first_fix_at": "2025-12-18T21:05:12Z",
+        "first_fix_delay_minutes": 295,
         "at": "2025-12-19T23:34:38Z",
         "delay_minutes": 1884,
         "complete": true,
@@ -990,71 +1747,157 @@
         },
         "notes": "Time is the manifest merge; images build shortly after, so availability on Docker Hub may be later"
       },
-      "debian": {
-        "at": "2026-03-02T21:28:38Z",
-        "delay_minutes": 106878,
-        "complete": true,
-        "precision": "exact",
-        "source": "security-tracker.debian.org CVE pages + DSA/DLA announcement dates",
-        "per_suite": {
-          "bookworm": {
-            "cves_fixed": 3,
-            "cves_total": 3,
-            "advisories": [
-              "DSA-6154-1"
-            ],
-            "versions": [
-              "8.2.30-1~deb12u1"
-            ],
-            "at": "2026-03-02T21:28:38Z"
-          },
-          "trixie": {
-            "cves_fixed": 3,
-            "cves_total": 3,
-            "advisories": [
-              "DSA-6088-1"
-            ],
-            "versions": [
-              "8.4.16-1~deb13u1"
-            ],
-            "at": "2025-12-21T11:38:08Z"
-          }
-        },
-        "notes": "bookworm is covered by DLA (LTS) once it left regular security support; a suite is dated when every affected CVE has a DSA/DLA"
-      },
-      "ubuntu": {
+      "ubuntu-noble": {
+        "first_fix_at": "2026-01-12T06:36:29Z",
+        "first_fix_delay_minutes": 35426,
         "at": "2026-01-12T06:36:29Z",
         "delay_minutes": 35426,
         "complete": true,
         "precision": "exact",
-        "source": "ubuntu.com/security/cves/<CVE>.json (USN published date); php8.3 on noble, php8.1 on jammy",
-        "per_release": {
-          "noble": {
-            "cves_fixed": 3,
-            "cves_total": 3,
-            "usns": [
-              "USN-7953-1"
-            ],
-            "versions": [
-              "8.3.6-0ubuntu0.24.04.6"
-            ],
-            "at": "2026-01-12T06:36:29Z"
+        "source": "ubuntu.com/security/cves/<CVE>.json (USN published date); php8.3 on noble",
+        "per_cve": {
+          "CVE-2025-14177": {
+            "at": "2026-01-12T06:36:29Z",
+            "advisory": "USN-7953-1",
+            "version": "8.3.6-0ubuntu0.24.04.6"
           },
-          "jammy": {
-            "cves_fixed": 2,
-            "cves_total": 2,
-            "usns": [
-              "USN-7953-1"
-            ],
-            "versions": [
-              "8.1.2-1ubuntu2.23"
-            ],
-            "at": "2026-01-12T06:36:29Z"
+          "CVE-2025-14178": {
+            "at": "2026-01-12T06:36:29Z",
+            "advisory": "USN-7953-1",
+            "version": "8.3.6-0ubuntu0.24.04.6"
+          },
+          "CVE-2025-14180": {
+            "at": "2026-01-12T06:36:29Z",
+            "advisory": "USN-7953-1",
+            "version": "8.3.6-0ubuntu0.24.04.6"
           }
         },
-        "notes": "Ubuntu backports fixes into its own version; a release is dated when every affected CVE has a USN"
+        "notes": "Ubuntu backports fixes into its own version. first_fix = earliest USN among the CVEs, all fixed = latest USN once every affected CVE has one",
+        "cves_fixed": 3,
+        "cves_total": 3,
+        "advisories": [
+          "USN-7953-1"
+        ],
+        "versions": [
+          "8.3.6-0ubuntu0.24.04.6"
+        ]
+      },
+      "ubuntu-jammy": {
+        "first_fix_at": "2026-01-12T06:36:29Z",
+        "first_fix_delay_minutes": 35426,
+        "at": "2026-01-12T06:36:29Z",
+        "delay_minutes": 35426,
+        "complete": true,
+        "precision": "exact",
+        "source": "ubuntu.com/security/cves/<CVE>.json (USN published date); php8.1 on jammy",
+        "per_cve": {
+          "CVE-2025-14178": {
+            "at": "2026-01-12T06:36:29Z",
+            "advisory": "USN-7953-1",
+            "version": "8.1.2-1ubuntu2.23"
+          },
+          "CVE-2025-14180": {
+            "at": "2026-01-12T06:36:29Z",
+            "advisory": "USN-7953-1",
+            "version": "8.1.2-1ubuntu2.23"
+          }
+        },
+        "notes": "Ubuntu backports fixes into its own version. first_fix = earliest USN among the CVEs, all fixed = latest USN once every affected CVE has one",
+        "cves_fixed": 2,
+        "cves_total": 2,
+        "advisories": [
+          "USN-7953-1"
+        ],
+        "versions": [
+          "8.1.2-1ubuntu2.23"
+        ]
+      },
+      "debian-bookworm": {
+        "first_fix_at": "2026-03-02T21:28:38Z",
+        "first_fix_delay_minutes": 106878,
+        "at": "2026-03-02T21:28:38Z",
+        "delay_minutes": 106878,
+        "complete": true,
+        "precision": "exact",
+        "source": "security-tracker.debian.org CVE pages + DSA/DLA announcement dates (bookworm)",
+        "per_cve": {
+          "CVE-2025-14177": {
+            "at": "2026-03-02T21:28:38Z",
+            "advisory": "DSA-6154-1",
+            "version": "8.2.30-1~deb12u1"
+          },
+          "CVE-2025-14178": {
+            "at": "2026-03-02T21:28:38Z",
+            "advisory": "DSA-6154-1",
+            "version": "8.2.30-1~deb12u1"
+          },
+          "CVE-2025-14180": {
+            "at": "2026-03-02T21:28:38Z",
+            "advisory": "DSA-6154-1",
+            "version": "8.2.30-1~deb12u1"
+          }
+        },
+        "notes": "first_fix = earliest DSA/DLA among the CVEs, all fixed = latest once every affected CVE has one; bookworm is covered by DLA (LTS) once it left regular security support",
+        "cves_fixed": 3,
+        "cves_total": 3,
+        "advisories": [
+          "DSA-6154-1"
+        ],
+        "versions": [
+          "8.2.30-1~deb12u1"
+        ]
+      },
+      "debian-trixie": {
+        "first_fix_at": "2025-12-21T11:38:08Z",
+        "first_fix_delay_minutes": 4048,
+        "at": "2025-12-21T11:38:08Z",
+        "delay_minutes": 4048,
+        "complete": true,
+        "precision": "exact",
+        "source": "security-tracker.debian.org CVE pages + DSA/DLA announcement dates (trixie)",
+        "per_cve": {
+          "CVE-2025-14177": {
+            "at": "2025-12-21T11:38:08Z",
+            "advisory": "DSA-6088-1",
+            "version": "8.4.16-1~deb13u1"
+          },
+          "CVE-2025-14178": {
+            "at": "2025-12-21T11:38:08Z",
+            "advisory": "DSA-6088-1",
+            "version": "8.4.16-1~deb13u1"
+          },
+          "CVE-2025-14180": {
+            "at": "2025-12-21T11:38:08Z",
+            "advisory": "DSA-6088-1",
+            "version": "8.4.16-1~deb13u1"
+          }
+        },
+        "notes": "first_fix = earliest DSA/DLA among the CVEs, all fixed = latest once every affected CVE has one; bookworm is covered by DLA (LTS) once it left regular security support",
+        "cves_fixed": 3,
+        "cves_total": 3,
+        "advisories": [
+          "DSA-6088-1"
+        ],
+        "versions": [
+          "8.4.16-1~deb13u1"
+        ]
       }
     },
-    "php_net_date": "2025-12-18"
+    "php_net_date": "2025-12-18",
+    "max_severity": "medium",
+    "cve_details": {
+      "CVE-2025-14177": {
+        "severity": "medium",
+        "cvss": 6.3
+      },
+      "CVE-2025-14178": {
+        "severity": "medium",
+        "cvss": 6.5
+      },
+      "CVE-2025-14180": {
+        "severity": "medium",
+        "cvss": 6.3
+      }
+    }
   }
 ]

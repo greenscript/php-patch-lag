@@ -54,6 +54,8 @@ class GroupingTests(unittest.TestCase):
         self.assertEqual(r["upstream_at"], "2026-10-21T13:34:13Z")  # earliest published_at
         self.assertEqual(r["upstream_precision"], "exact")
         self.assertIsNotNone(r["max_cvss"])
+        self.assertEqual(r["max_severity"], "critical")
+        self.assertEqual(r["cve_details"]["CVE-2026-109618"]["severity"], "critical")
 
     def test_gap_splits_groups(self):
         base = {"state": "published", "cve_id": "CVE-1", "vulnerabilities": [{"patched_versions": "8.2.1"}]}
@@ -77,6 +79,8 @@ class DelayTests(unittest.TestCase):
         units = {"8.2": {"at": "2026-10-21T15:00:00Z"}, "8.3": {"at": "2026-10-21T16:00:00Z"}, "8.4": {"at": None}}
         e = make_channel_entry(rel, units, ["8.2", "8.3", "8.4"], "exact", "src")
         self.assertEqual(e["at"], "2026-10-21T16:00:00Z")
+        self.assertEqual(e["first_fix_at"], "2026-10-21T15:00:00Z")
+        self.assertEqual(e["first_fix_delay_minutes"], 86)
         self.assertFalse(e["complete"])
         self.assertEqual(e["delay_minutes"], 146)
         units["8.4"]["at"] = "2026-10-21T17:00:00Z"
@@ -108,6 +112,22 @@ class PollTests(unittest.TestCase):
         self.assertEqual(poll_first_seen(st, "8.2.34")[0], "8.2.34-1")  # baseline: no time, not 8.2.35's
         self.assertIsNone(poll_first_seen(st, "8.2.37")[0])
 
+    def test_per_cve_entry_first_and_all_fixed(self):
+        rel = {"upstream_at": "2026-10-21T13:00:00Z"}
+        per = {"CVE-1": {"at": "2026-10-21T14:00:00Z", "advisory": "USN-1", "version": "1"},
+               "CVE-2": {"at": "2026-10-22T14:00:00Z", "advisory": "USN-2", "version": "2"},
+               "CVE-3": {"at": None}}
+        e = channels._per_cve_entry(rel, per, 1, "src", None)
+        self.assertEqual((e["cves_fixed"], e["cves_total"], e["cves_ignored"]), (2, 3, 1))
+        self.assertFalse(e["complete"])
+        self.assertEqual(e["first_fix_delay_minutes"], 60)
+        self.assertEqual(e["advisories"], ["USN-1", "USN-2"])
+        per["CVE-3"] = {"at": "2026-10-23T00:00:00Z", "advisory": "USN-2", "version": "2"}
+        e = channels._per_cve_entry(rel, per, 0, "src", None)
+        self.assertTrue(e["complete"])
+        self.assertEqual(e["at"], "2026-10-23T00:00:00Z")
+        self.assertEqual(e["advisories"], ["USN-1", "USN-2"])
+
     def test_collect_poll_entry(self):
         class Ctx:
             state = {"poll": {"serverpilot-noble": {"sp-php8.2": {"8.2.35-1": {
@@ -117,6 +137,7 @@ class PollTests(unittest.TestCase):
         e = channels.collect_poll(Ctx(), rel, "serverpilot-noble")
         self.assertEqual(e["at"], "2026-10-21T19:50:00Z")
         self.assertEqual(e["delay_minutes"], 376)
+        self.assertEqual(e["first_fix_delay_minutes"], 376)
         self.assertEqual(e["precision"], "5-min-poll")
         self.assertFalse(e["complete"])
         self.assertIsNone(e["per_branch"]["8.3"]["at"])

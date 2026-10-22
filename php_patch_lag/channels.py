@@ -94,45 +94,43 @@ def parse_ubuntu_cve(data, codenames=UBUNTU_RELEASES):
     return out
 
 
-def collect_ubuntu(ctx, release):
-    per = {}
-    for code in UBUNTU_RELEASES:
-        per[code] = {"cves_ignored": 0, "cves_total": 0, "cves_fixed": 0, "_times": [], "versions": set(), "usns": set()}
+def _per_cve_entry(release, per_cve, ignored, source, notes):
+    """Entry for an OS release: units are the affected CVEs (advisory dates)."""
+    affected = list(per_cve)
+    entry = make_channel_entry(release, per_cve, affected, "exact", source, unit_key="per_cve", notes=notes)
+    if entry is None:
+        return None
+    fixed = [u for u in per_cve.values() if u.get("at")]
+    entry["cves_fixed"], entry["cves_total"] = len(fixed), len(per_cve)
+    entry["advisories"] = sorted({u["advisory"] for u in fixed})
+    entry["versions"] = sorted({u["version"] for u in fixed if u.get("version")})
+    if ignored:
+        entry["cves_ignored"] = ignored
+    return entry
+
+
+def collect_ubuntu(ctx, release, code):
+    per_cve, ignored = {}, 0
     for cve in release["cves"]:
-        parsed = parse_ubuntu_cve(http.get_json(UBUNTU_URL(cve)))
-        for code, info in parsed.items():
-            st = info["status"]
-            if st in (None, "DNE", "not-affected"):
-                continue
-            if st == "ignored":  # Ubuntu decided not to ship a fix; does not block "all fixed"
-                per[code]["cves_ignored"] += 1
-                continue
-            per[code]["cves_total"] += 1
-            if st == "released" and info["usn"]:
-                per[code]["cves_fixed"] += 1
-                per[code]["_times"].append(info["usn"][1])
-                per[code]["usns"].add(info["usn"][0])
-                if info["fixed_version"]:
-                    per[code]["versions"].add(info["fixed_version"])
-    units = {}
-    for code, p in per.items():
-        if p["cves_total"] == 0:
+        key = ("ubuntu", cve)
+        if key not in ctx.cache:
+            ctx.cache[key] = parse_ubuntu_cve(http.get_json(UBUNTU_URL(cve)))
+        info = ctx.cache[key][code]
+        st = info["status"]
+        if st in (None, "DNE", "not-affected"):
             continue
-        u = {"cves_fixed": p["cves_fixed"], "cves_total": p["cves_total"],
-             "usns": sorted(p["usns"]), "versions": sorted(p["versions"])}
-        if p["cves_ignored"]:
-            u["cves_ignored"] = p["cves_ignored"]
-        if p["_times"] and p["cves_fixed"] == p["cves_total"]:
-            u["at"] = max(p["_times"], key=parse_ts)
-        elif p["_times"]:
-            u["at_partial"] = max(p["_times"], key=parse_ts)
-        units[code] = u
-    expected = [c for c, u in units.items()]
-    return make_channel_entry(
-        release, units, expected, "exact",
-        "ubuntu.com/security/cves/<CVE>.json (USN published date); php8.3 on noble, php8.1 on jammy",
-        unit_key="per_release",
-        notes="Ubuntu backports fixes into its own version; a release is dated when every affected CVE has a USN")
+        if st == "ignored":  # Ubuntu decided not to ship a fix; does not block "all fixed"
+            ignored += 1
+            continue
+        u = {"at": None}
+        if st == "released" and info["usn"]:
+            u = {"at": info["usn"][1], "advisory": info["usn"][0], "version": info["fixed_version"]}
+        per_cve[cve] = u
+    return _per_cve_entry(
+        release, per_cve, ignored,
+        "ubuntu.com/security/cves/<CVE>.json (USN published date); %s on %s" % (UBUNTU_RELEASES[code], code),
+        "Ubuntu backports fixes into its own version. first_fix = earliest USN among the CVEs, "
+        "all fixed = latest USN once every affected CVE has one")
 
 
 def UBUNTU_URL(cve):
@@ -202,39 +200,27 @@ def debian_advisory_date(ctx, adv_id, year_hint):
     return when
 
 
-def collect_debian(ctx, release):
+def collect_debian(ctx, release, suite):
     year = parse_ts(release["upstream_at"]).year
-    per = {s: {"total": 0, "fixed": 0, "times": [], "ids": set(), "versions": set()} for s in DEBIAN_SUITES}
+    per_cve = {}
     for cve in release["cves"]:
-        parsed = parse_debian_cve(http.get_text(DEBIAN_CVE % cve))
-        for suite, info in parsed.items():
-            if info["status"] == "not-affected":
-                continue
-            per[suite]["total"] += 1
-            if info["status"] == "fixed" and info["advisory"]:
-                when = debian_advisory_date(ctx, info["advisory"], year)
-                if when:
-                    per[suite]["fixed"] += 1
-                    per[suite]["times"].append(when)
-                    per[suite]["ids"].add(info["advisory"])
-                    per[suite]["versions"].add(info["version"])
-    units = {}
-    for suite, p in per.items():
-        if p["total"] == 0:
+        key = ("debian", cve)
+        if key not in ctx.cache:
+            ctx.cache[key] = parse_debian_cve(http.get_text(DEBIAN_CVE % cve))
+        info = ctx.cache[key].get(suite)
+        if not info or info["status"] == "not-affected":
             continue
-        u = {"cves_fixed": p["fixed"], "cves_total": p["total"],
-             "advisories": sorted(p["ids"]), "versions": sorted(p["versions"])}
-        if p["times"] and p["fixed"] == p["total"]:
-            u["at"] = max(p["times"], key=parse_ts)
-        elif p["times"]:
-            u["at_partial"] = max(p["times"], key=parse_ts)
-        units[suite] = u
-    return make_channel_entry(
-        release, units, list(units), "exact",
-        "security-tracker.debian.org CVE pages + DSA/DLA announcement dates",
-        unit_key="per_suite",
-        notes="bookworm is covered by DLA (LTS) once it left regular security support; "
-              "a suite is dated when every affected CVE has a DSA/DLA")
+        u = {"at": None}
+        if info["status"] == "fixed" and info["advisory"]:
+            when = debian_advisory_date(ctx, info["advisory"], year)
+            if when:
+                u = {"at": when, "advisory": info["advisory"], "version": info["version"]}
+        per_cve[cve] = u
+    return _per_cve_entry(
+        release, per_cve, 0,
+        "security-tracker.debian.org CVE pages + DSA/DLA announcement dates (%s)" % suite,
+        "first_fix = earliest DSA/DLA among the CVEs, all fixed = latest once every affected CVE has one; "
+        "bookworm is covered by DLA (LTS) once it left regular security support")
 
 
 # --- Docker official images ----------------------------------------------------

@@ -9,7 +9,7 @@ import sys
 from datetime import datetime, timedelta, timezone
 
 from php_patch_lag import channels, http
-from php_patch_lag.core import group_advisories, iso, parse_ts, branch_of
+from php_patch_lag.core import group_advisories, iso, parse_ts
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(ROOT, "data")
@@ -23,9 +23,11 @@ CHANNELS = {
     "ondrej-ubuntu-noble": lambda c, r: channels.collect_ondrej_ubuntu(c, r, "noble"),
     "ondrej-ubuntu-jammy": lambda c, r: channels.collect_ondrej_ubuntu(c, r, "jammy"),
     "docker-official": channels.collect_docker,
-    "ubuntu": channels.collect_ubuntu,
-    "debian": channels.collect_debian,
 }
+for _code in channels.UBUNTU_RELEASES:
+    CHANNELS["ubuntu-" + _code] = (lambda s: lambda c, r: channels.collect_ubuntu(c, r, s))(_code)
+for _suite in channels.DEBIAN_SUITES:
+    CHANNELS["debian-" + _suite] = (lambda s: lambda c, r: channels.collect_debian(c, r, s))(_suite)
 for _name in channels.POLL_CHANNELS:
     CHANNELS[_name] = (lambda n: lambda c, r: channels.collect_poll(c, r, n))(_name)
 
@@ -80,7 +82,7 @@ def phpnet_dates(branches):
 
 def merge_release(existing, new):
     """Update advisory-derived fields of a stored release, keep its channels."""
-    for k in ("branches", "cves", "max_cvss", "upstream_at", "upstream_precision"):
+    for k in ("branches", "cves", "max_cvss", "max_severity", "cve_details", "upstream_at", "upstream_precision"):
         existing[k] = new[k]
     return existing
 

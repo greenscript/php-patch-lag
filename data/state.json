@@ -48,8 +48,9 @@
           "baseline_at": "2026-10-22T00:49:00Z"
         },
         "8.3.36-1": {
-          "first_seen": null,
-          "baseline_at": "2026-10-22T00:49:00Z"
+          "first_seen": "2026-10-21T19:50:00Z",
+          "precision": "5-min-poll",
+          "source": "observed by GreenScript"
         }
       },
       "sp-php8.4": {
@@ -70,8 +71,9 @@
           "baseline_at": "2026-10-22T00:49:00Z"
         },
         "8.4.27-1": {
-          "first_seen": null,
-          "baseline_at": "2026-10-22T00:49:00Z"
+          "first_seen": "2026-10-21T19:50:00Z",
+          "precision": "5-min-poll",
+          "source": "observed by GreenScript"
         }
       },
       "sp-php8.5": {
@@ -84,8 +86,9 @@
           "baseline_at": "2026-10-22T00:49:00Z"
         },
         "8.5.12-1": {
-          "first_seen": null,
-          "baseline_at": "2026-10-22T00:49:00Z"
+          "first_seen": "2026-10-21T19:50:00Z",
+          "precision": "5-min-poll",
+          "source": "observed by GreenScript"
         },
         "8.5.8-1": {
           "first_seen": null,
@@ -126,8 +129,9 @@
           "baseline_at": "2026-10-22T00:49:00Z"
         },
         "8.2.35-1": {
-          "first_seen": null,
-          "baseline_at": "2026-10-22T00:49:00Z"
+          "first_seen": "2026-10-21T19:50:00Z",
+          "precision": "5-min-poll",
+          "source": "observed by GreenScript"
         }
       },
       "sp-php8.3": {
@@ -144,8 +148,9 @@
           "baseline_at": "2026-10-22T00:49:00Z"
         },
         "8.3.36-1": {
-          "first_seen": null,
-          "baseline_at": "2026-10-22T00:49:00Z"
+          "first_seen": "2026-10-21T19:50:00Z",
+          "precision": "5-min-poll",
+          "source": "observed by GreenScript"
         }
       },
       "sp-php8.4": {
@@ -166,8 +171,9 @@
           "baseline_at": "2026-10-22T00:49:00Z"
         },
         "8.4.27-1": {
-          "first_seen": null,
-          "baseline_at": "2026-10-22T00:49:00Z"
+          "first_seen": "2026-10-21T19:50:00Z",
+          "precision": "5-min-poll",
+          "source": "observed by GreenScript"
         }
       },
       "sp-php8.5": {
@@ -180,8 +186,9 @@
           "baseline_at": "2026-10-22T00:49:00Z"
         },
         "8.5.12-1": {
-          "first_seen": null,
-          "baseline_at": "2026-10-22T00:49:00Z"
+          "first_seen": "2026-10-21T19:50:00Z",
+          "precision": "5-min-poll",
+          "source": "observed by GreenScript"
         },
         "8.5.8-1": {
           "first_seen": null,
@@ -286,29 +293,29 @@
   },
   "checked": {
     "2026-07-30": {
-      "serverpilot-noble": "2026-10-22T00:52:00Z",
-      "serverpilot-jammy": "2026-10-22T00:52:00Z",
-      "ondrej-debian-bookworm": "2026-10-22T00:52:00Z",
-      "ondrej-debian-trixie": "2026-10-22T00:52:00Z"
+      "serverpilot-noble": "2026-10-22T00:55:00Z",
+      "serverpilot-jammy": "2026-10-22T00:55:00Z",
+      "ondrej-debian-bookworm": "2026-10-22T00:55:00Z",
+      "ondrej-debian-trixie": "2026-10-22T00:55:00Z"
     },
     "2026-07-02": {
-      "serverpilot-noble": "2026-10-22T00:52:00Z",
-      "serverpilot-jammy": "2026-10-22T00:52:00Z",
-      "ondrej-debian-bookworm": "2026-10-22T00:52:00Z",
-      "ondrej-debian-trixie": "2026-10-22T00:52:00Z"
+      "serverpilot-noble": "2026-10-22T00:55:00Z",
+      "serverpilot-jammy": "2026-10-22T00:55:00Z",
+      "ondrej-debian-bookworm": "2026-10-22T00:55:00Z",
+      "ondrej-debian-trixie": "2026-10-22T00:55:00Z"
     },
     "2026-05-07": {
-      "ubuntu": "2026-10-22T00:52:00Z",
-      "serverpilot-noble": "2026-10-22T00:52:00Z",
-      "serverpilot-jammy": "2026-10-22T00:52:00Z",
-      "ondrej-debian-bookworm": "2026-10-22T00:52:00Z",
-      "ondrej-debian-trixie": "2026-10-22T00:52:00Z"
+      "ubuntu-noble": "2026-10-22T00:55:00Z",
+      "serverpilot-noble": "2026-10-22T00:55:00Z",
+      "serverpilot-jammy": "2026-10-22T00:55:00Z",
+      "ondrej-debian-bookworm": "2026-10-22T00:55:00Z",
+      "ondrej-debian-trixie": "2026-10-22T00:55:00Z"
     },
     "2025-12-18": {
-      "serverpilot-noble": "2026-10-22T00:52:00Z",
-      "serverpilot-jammy": "2026-10-22T00:52:00Z",
-      "ondrej-debian-bookworm": "2026-10-22T00:52:00Z",
-      "ondrej-debian-trixie": "2026-10-22T00:52:00Z"
+      "serverpilot-noble": "2026-10-22T00:55:00Z",
+      "serverpilot-jammy": "2026-10-22T00:55:00Z",
+      "ondrej-debian-bookworm": "2026-10-22T00:55:00Z",
+      "ondrej-debian-trixie": "2026-10-22T00:55:00Z"
     }
   }
 }
