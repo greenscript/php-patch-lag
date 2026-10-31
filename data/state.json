@@ -318,10 +318,10 @@
       "ondrej-debian-trixie": "2026-10-29T02:31:00Z"
     },
     "2026-09-24": {
-      "serverpilot-noble": "2026-10-24T12:44:00Z",
-      "serverpilot-jammy": "2026-10-24T12:44:00Z",
-      "ondrej-debian-bookworm": "2026-10-24T12:44:00Z",
-      "ondrej-debian-trixie": "2026-10-24T12:44:00Z"
+      "serverpilot-noble": "2026-10-31T13:42:00Z",
+      "serverpilot-jammy": "2026-10-31T13:42:00Z",
+      "ondrej-debian-bookworm": "2026-10-31T13:42:00Z",
+      "ondrej-debian-trixie": "2026-10-31T13:42:00Z"
     }
   }
 }
