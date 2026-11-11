@@ -235,6 +235,11 @@
         "8.6.0~rc3-1+0~20261012.3+debian12~1.gbpecfa4e": {
           "first_seen": null,
           "baseline_at": "2026-10-22T00:49:00Z"
+        },
+        "8.6.0~rc5-1+0~deb.sury.org.1+debian12": {
+          "first_seen": "2026-11-11T07:49:00Z",
+          "precision": "hourly-poll",
+          "source": "first seen by collector"
         }
       }
     },
@@ -273,6 +278,11 @@
         "8.6.0~rc3-1+0~20261012.3+debian13~1.gbpecfa4e": {
           "first_seen": null,
           "baseline_at": "2026-10-22T00:49:00Z"
+        },
+        "8.6.0~rc5-1+0~deb.sury.org.1+debian13": {
+          "first_seen": "2026-11-11T07:49:00Z",
+          "precision": "hourly-poll",
+          "source": "first seen by collector"
         }
       }
     }
