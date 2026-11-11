@@ -211,24 +211,44 @@
         "8.2.35-1+0~20261021.94+debian12~1.gbp8bff78": {
           "first_seen": null,
           "baseline_at": "2026-10-22T00:49:00Z"
+        },
+        "8.2.35-2+0~deb.sury.org.1+debian12": {
+          "first_seen": "2026-11-11T16:14:00Z",
+          "precision": "hourly-poll",
+          "source": "first seen by collector"
         }
       },
       "php8.3-fpm": {
         "8.3.36-1+0~20261021.88+debian12~1.gbp250f7c": {
           "first_seen": null,
           "baseline_at": "2026-10-22T00:49:00Z"
+        },
+        "8.3.36-2+0~deb.sury.org.1+debian12": {
+          "first_seen": "2026-11-11T16:14:00Z",
+          "precision": "hourly-poll",
+          "source": "first seen by collector"
         }
       },
       "php8.4-fpm": {
         "8.4.27-1+0~20261021.57+debian12~1.gbp7636b9": {
           "first_seen": null,
           "baseline_at": "2026-10-22T00:49:00Z"
+        },
+        "8.4.27-2+0~deb.sury.org.1+debian12": {
+          "first_seen": "2026-11-11T16:14:00Z",
+          "precision": "hourly-poll",
+          "source": "first seen by collector"
         }
       },
       "php8.5-fpm": {
         "8.5.12-1+0~20261021.27+debian12~1.gbp1a3e8a": {
           "first_seen": null,
           "baseline_at": "2026-10-22T00:49:00Z"
+        },
+        "8.5.12-3+0~deb.sury.org.1+debian12": {
+          "first_seen": "2026-11-11T16:14:00Z",
+          "precision": "hourly-poll",
+          "source": "first seen by collector"
         }
       },
       "php8.6-fpm": {
@@ -254,24 +274,44 @@
         "8.2.35-1+0~20261021.94+debian13~1.gbp8bff78": {
           "first_seen": null,
           "baseline_at": "2026-10-22T00:49:00Z"
+        },
+        "8.2.35-2+0~deb.sury.org.1+debian13": {
+          "first_seen": "2026-11-11T16:14:00Z",
+          "precision": "hourly-poll",
+          "source": "first seen by collector"
         }
       },
       "php8.3-fpm": {
         "8.3.36-1+0~20261021.88+debian13~1.gbp250f7c": {
           "first_seen": null,
           "baseline_at": "2026-10-22T00:49:00Z"
+        },
+        "8.3.36-2+0~deb.sury.org.1+debian13": {
+          "first_seen": "2026-11-11T16:14:00Z",
+          "precision": "hourly-poll",
+          "source": "first seen by collector"
         }
       },
       "php8.4-fpm": {
         "8.4.27-1+0~20261021.57+debian13~1.gbp7636b9": {
           "first_seen": null,
           "baseline_at": "2026-10-22T00:49:00Z"
+        },
+        "8.4.27-2+0~deb.sury.org.1+debian13": {
+          "first_seen": "2026-11-11T16:14:00Z",
+          "precision": "hourly-poll",
+          "source": "first seen by collector"
         }
       },
       "php8.5-fpm": {
         "8.5.12-1+0~20261021.27+debian13~1.gbp1a3e8a": {
           "first_seen": null,
           "baseline_at": "2026-10-22T00:49:00Z"
+        },
+        "8.5.12-3+0~deb.sury.org.1+debian13": {
+          "first_seen": "2026-11-11T16:14:00Z",
+          "precision": "hourly-poll",
+          "source": "first seen by collector"
         }
       },
       "php8.6-fpm": {
