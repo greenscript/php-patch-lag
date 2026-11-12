@@ -343,29 +343,29 @@
   },
   "checked": {
     "2026-07-30": {
-      "serverpilot-noble": "2026-11-05T11:02:00Z",
-      "serverpilot-jammy": "2026-11-05T11:02:00Z",
-      "ondrej-debian-bookworm": "2026-11-05T11:02:00Z",
-      "ondrej-debian-trixie": "2026-11-05T11:02:00Z"
+      "serverpilot-noble": "2026-11-12T12:49:00Z",
+      "serverpilot-jammy": "2026-11-12T12:49:00Z",
+      "ondrej-debian-bookworm": "2026-11-12T12:49:00Z",
+      "ondrej-debian-trixie": "2026-11-12T12:49:00Z"
     },
     "2026-07-02": {
-      "serverpilot-noble": "2026-11-05T11:02:00Z",
-      "serverpilot-jammy": "2026-11-05T11:02:00Z",
-      "ondrej-debian-bookworm": "2026-11-05T11:02:00Z",
-      "ondrej-debian-trixie": "2026-11-05T11:02:00Z"
+      "serverpilot-noble": "2026-11-12T12:49:00Z",
+      "serverpilot-jammy": "2026-11-12T12:49:00Z",
+      "ondrej-debian-bookworm": "2026-11-12T12:49:00Z",
+      "ondrej-debian-trixie": "2026-11-12T12:49:00Z"
     },
     "2026-05-07": {
       "ubuntu-noble": "2026-11-10T04:39:00Z",
-      "serverpilot-noble": "2026-11-05T11:02:00Z",
-      "serverpilot-jammy": "2026-11-05T11:02:00Z",
-      "ondrej-debian-bookworm": "2026-11-05T11:02:00Z",
-      "ondrej-debian-trixie": "2026-11-05T11:02:00Z"
+      "serverpilot-noble": "2026-11-12T12:49:00Z",
+      "serverpilot-jammy": "2026-11-12T12:49:00Z",
+      "ondrej-debian-bookworm": "2026-11-12T12:49:00Z",
+      "ondrej-debian-trixie": "2026-11-12T12:49:00Z"
     },
     "2025-12-18": {
-      "serverpilot-noble": "2026-11-05T11:02:00Z",
-      "serverpilot-jammy": "2026-11-05T11:02:00Z",
-      "ondrej-debian-bookworm": "2026-11-05T11:02:00Z",
-      "ondrej-debian-trixie": "2026-11-05T11:02:00Z"
+      "serverpilot-noble": "2026-11-12T12:49:00Z",
+      "serverpilot-jammy": "2026-11-12T12:49:00Z",
+      "ondrej-debian-bookworm": "2026-11-12T12:49:00Z",
+      "ondrej-debian-trixie": "2026-11-12T12:49:00Z"
     },
     "2026-09-24": {
       "serverpilot-noble": "2026-11-07T15:42:00Z",
