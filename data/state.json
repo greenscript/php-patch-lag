@@ -260,6 +260,11 @@
           "first_seen": "2026-11-11T07:49:00Z",
           "precision": "hourly-poll",
           "source": "first seen by collector"
+        },
+        "8.6.0~rc5-2+0~deb.sury.org.1+debian12": {
+          "first_seen": "2026-11-13T17:48:00Z",
+          "precision": "hourly-poll",
+          "source": "first seen by collector"
         }
       }
     },
@@ -321,6 +326,11 @@
         },
         "8.6.0~rc5-1+0~deb.sury.org.1+debian13": {
           "first_seen": "2026-11-11T07:49:00Z",
+          "precision": "hourly-poll",
+          "source": "first seen by collector"
+        },
+        "8.6.0~rc5-2+0~deb.sury.org.1+debian13": {
+          "first_seen": "2026-11-13T17:48:00Z",
           "precision": "hourly-poll",
           "source": "first seen by collector"
         }
