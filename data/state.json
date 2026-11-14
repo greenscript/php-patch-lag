@@ -98,6 +98,12 @@
           "first_seen": null,
           "baseline_at": "2026-10-22T00:49:00Z"
         }
+      },
+      "sp-php8.6": {
+        "8.6.0RC4-1": {
+          "first_seen": null,
+          "baseline_at": "2026-11-14T19:13:00Z"
+        }
       }
     },
     "serverpilot-jammy": {
@@ -197,6 +203,12 @@
         "8.5.9-1": {
           "first_seen": null,
           "baseline_at": "2026-10-22T00:49:00Z"
+        }
+      },
+      "sp-php8.6": {
+        "8.6.0RC4-1": {
+          "first_seen": null,
+          "baseline_at": "2026-11-14T19:13:00Z"
         }
       }
     },
@@ -378,10 +390,10 @@
       "ondrej-debian-trixie": "2026-11-12T12:49:00Z"
     },
     "2026-09-24": {
-      "serverpilot-noble": "2026-11-07T15:42:00Z",
-      "serverpilot-jammy": "2026-11-07T15:42:00Z",
-      "ondrej-debian-bookworm": "2026-11-07T15:42:00Z",
-      "ondrej-debian-trixie": "2026-11-07T15:42:00Z"
+      "serverpilot-noble": "2026-11-14T19:13:00Z",
+      "serverpilot-jammy": "2026-11-14T19:13:00Z",
+      "ondrej-debian-bookworm": "2026-11-14T19:13:00Z",
+      "ondrej-debian-trixie": "2026-11-14T19:13:00Z"
     }
   }
 }
