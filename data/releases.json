@@ -1,5 +1,480 @@
 [
   {
+    "id": "2026-11-19",
+    "branches": {
+      "8.2": "8.2.36",
+      "8.3": "8.3.37",
+      "8.4": "8.4.28",
+      "8.5": "8.5.13"
+    },
+    "cves": [
+      "CVE-2026-115560",
+      "CVE-2026-126714",
+      "CVE-2026-127960",
+      "CVE-2026-128064",
+      "CVE-2026-128090",
+      "CVE-2026-129182",
+      "CVE-2026-129289",
+      "CVE-2026-129291",
+      "CVE-2026-129292",
+      "CVE-2026-129438",
+      "CVE-2026-129474",
+      "CVE-2026-129481",
+      "CVE-2026-129496",
+      "CVE-2026-129501",
+      "CVE-2026-129506",
+      "CVE-2026-129538",
+      "CVE-2026-15353"
+    ],
+    "max_cvss": 9.2,
+    "max_severity": "critical",
+    "cve_details": {
+      "CVE-2026-115560": {
+        "severity": "critical",
+        "cvss": 9.2
+      },
+      "CVE-2026-126714": {
+        "severity": "critical",
+        "cvss": 9.2
+      },
+      "CVE-2026-127960": {
+        "severity": "high",
+        "cvss": 8.7
+      },
+      "CVE-2026-128064": {
+        "severity": "high",
+        "cvss": 8.2
+      },
+      "CVE-2026-128090": {
+        "severity": "high",
+        "cvss": 7.7
+      },
+      "CVE-2026-129182": {
+        "severity": "critical",
+        "cvss": 9.2
+      },
+      "CVE-2026-129289": {
+        "severity": "critical",
+        "cvss": 9.2
+      },
+      "CVE-2026-129291": {
+        "severity": "high",
+        "cvss": 8.8
+      },
+      "CVE-2026-129292": {
+        "severity": "medium",
+        "cvss": 5.3
+      },
+      "CVE-2026-129438": {
+        "severity": "medium",
+        "cvss": 6.3
+      },
+      "CVE-2026-129474": {
+        "severity": "critical",
+        "cvss": 9.2
+      },
+      "CVE-2026-129481": {
+        "severity": "critical",
+        "cvss": 9.2
+      },
+      "CVE-2026-129496": {
+        "severity": "critical",
+        "cvss": 9.2
+      },
+      "CVE-2026-129501": {
+        "severity": "medium",
+        "cvss": 6.3
+      },
+      "CVE-2026-129506": {
+        "severity": "medium",
+        "cvss": 6.3
+      },
+      "CVE-2026-129538": {
+        "severity": "medium",
+        "cvss": 6.9
+      },
+      "CVE-2026-15353": {
+        "severity": "medium",
+        "cvss": 6.3
+      }
+    },
+    "upstream_at": "2026-11-19T14:05:55Z",
+    "upstream_precision": "exact",
+    "channels": {
+      "ondrej-ubuntu-jammy": {
+        "first_fix_at": "2026-11-19T21:37:43Z",
+        "first_fix_delay_minutes": 452,
+        "at": "2026-11-19T21:37:43Z",
+        "delay_minutes": 452,
+        "complete": false,
+        "precision": "exact",
+        "source": "Launchpad getPublishedBinaries, ppa:ondrej/php, php<branch>-fpm amd64, jammy",
+        "per_branch": {
+          "8.2": {
+            "version": "8.2.36-2+ubuntu22.04.1+deb.sury.org+1",
+            "at": "2026-11-19T21:37:43Z"
+          },
+          "8.3": {
+            "version": "8.3.37-2+ubuntu22.04.1+deb.sury.org+1",
+            "at": "2026-11-19T21:37:43Z"
+          },
+          "8.4": {
+            "version": "8.4.28-2+ubuntu22.04.1+deb.sury.org+1",
+            "at": "2026-11-19T21:37:43Z"
+          }
+        },
+        "notes": "at = latest branch (all branches fixed); per_branch = first amd64 date_published"
+      },
+      "docker-official": {
+        "first_fix_at": "2026-11-19T14:17:53Z",
+        "first_fix_delay_minutes": 12,
+        "at": "2026-11-19T14:17:53Z",
+        "delay_minutes": 12,
+        "complete": true,
+        "precision": "exact",
+        "source": "docker-library/official-images commits touching library/php (first commit listing the tag)",
+        "per_branch": {
+          "8.2": {
+            "version": "8.2.36",
+            "at": "2026-11-19T14:17:53Z",
+            "commit": "82714d64e4"
+          },
+          "8.3": {
+            "version": "8.3.37",
+            "at": "2026-11-19T14:17:53Z",
+            "commit": "82714d64e4"
+          },
+          "8.4": {
+            "version": "8.4.28",
+            "at": "2026-11-19T14:17:53Z",
+            "commit": "82714d64e4"
+          },
+          "8.5": {
+            "version": "8.5.13",
+            "at": "2026-11-19T14:17:53Z",
+            "commit": "82714d64e4"
+          }
+        },
+        "notes": "Time is the manifest merge; images build shortly after, so availability on Docker Hub may be later"
+      },
+      "debian-bookworm": {
+        "first_fix_at": "2026-11-19T16:47:39Z",
+        "first_fix_delay_minutes": 162,
+        "at": "2026-11-19T16:47:39Z",
+        "delay_minutes": 162,
+        "complete": true,
+        "precision": "exact",
+        "source": "security-tracker.debian.org CVE pages + DSA/DLA announcement dates (bookworm)",
+        "per_cve": {
+          "CVE-2026-115560": {
+            "at": "2026-11-19T16:47:39Z",
+            "advisory": "DLA-4916-1",
+            "version": "8.2.36-1~deb12u1"
+          },
+          "CVE-2026-126714": {
+            "at": "2026-11-19T16:47:39Z",
+            "advisory": "DLA-4916-1",
+            "version": "8.2.36-1~deb12u1"
+          },
+          "CVE-2026-127960": {
+            "at": "2026-11-19T16:47:39Z",
+            "advisory": "DLA-4916-1",
+            "version": "8.2.36-1~deb12u1"
+          },
+          "CVE-2026-128064": {
+            "at": "2026-11-19T16:47:39Z",
+            "advisory": "DLA-4916-1",
+            "version": "8.2.36-1~deb12u1"
+          },
+          "CVE-2026-128090": {
+            "at": "2026-11-19T16:47:39Z",
+            "advisory": "DLA-4916-1",
+            "version": "8.2.36-1~deb12u1"
+          },
+          "CVE-2026-129289": {
+            "at": "2026-11-19T16:47:39Z",
+            "advisory": "DLA-4916-1",
+            "version": "8.2.36-1~deb12u1"
+          },
+          "CVE-2026-129291": {
+            "at": "2026-11-19T16:47:39Z",
+            "advisory": "DLA-4916-1",
+            "version": "8.2.36-1~deb12u1"
+          },
+          "CVE-2026-129292": {
+            "at": "2026-11-19T16:47:39Z",
+            "advisory": "DLA-4916-1",
+            "version": "8.2.36-1~deb12u1"
+          },
+          "CVE-2026-129496": {
+            "at": "2026-11-19T16:47:39Z",
+            "advisory": "DLA-4916-1",
+            "version": "8.2.36-1~deb12u1"
+          },
+          "CVE-2026-129506": {
+            "at": "2026-11-19T16:47:39Z",
+            "advisory": "DLA-4916-1",
+            "version": "8.2.36-1~deb12u1"
+          },
+          "CVE-2026-129538": {
+            "at": "2026-11-19T16:47:39Z",
+            "advisory": "DLA-4916-1",
+            "version": "8.2.36-1~deb12u1"
+          },
+          "CVE-2026-15353": {
+            "at": "2026-11-19T16:47:39Z",
+            "advisory": "DLA-4916-1",
+            "version": "8.2.36-1~deb12u1"
+          }
+        },
+        "notes": "first_fix = earliest DSA/DLA among the CVEs, all fixed = latest once every affected CVE has one; bookworm is covered by DLA (LTS) once it left regular security support",
+        "cves_fixed": 12,
+        "cves_total": 12,
+        "advisories": [
+          "DLA-4916-1"
+        ],
+        "versions": [
+          "8.2.36-1~deb12u1"
+        ]
+      },
+      "debian-trixie": {
+        "first_fix_at": "2026-11-19T14:29:13Z",
+        "first_fix_delay_minutes": 23,
+        "at": "2026-11-19T14:29:13Z",
+        "delay_minutes": 23,
+        "complete": true,
+        "precision": "exact",
+        "source": "security-tracker.debian.org CVE pages + DSA/DLA announcement dates (trixie)",
+        "per_cve": {
+          "CVE-2026-115560": {
+            "at": "2026-11-19T14:29:13Z",
+            "advisory": "DSA-6641-1",
+            "version": "8.4.28-1~deb13u1"
+          },
+          "CVE-2026-126714": {
+            "at": "2026-11-19T14:29:13Z",
+            "advisory": "DSA-6641-1",
+            "version": "8.4.28-1~deb13u1"
+          },
+          "CVE-2026-127960": {
+            "at": "2026-11-19T14:29:13Z",
+            "advisory": "DSA-6641-1",
+            "version": "8.4.28-1~deb13u1"
+          },
+          "CVE-2026-128064": {
+            "at": "2026-11-19T14:29:13Z",
+            "advisory": "DSA-6641-1",
+            "version": "8.4.28-1~deb13u1"
+          },
+          "CVE-2026-128090": {
+            "at": "2026-11-19T14:29:13Z",
+            "advisory": "DSA-6641-1",
+            "version": "8.4.28-1~deb13u1"
+          },
+          "CVE-2026-129289": {
+            "at": "2026-11-19T14:29:13Z",
+            "advisory": "DSA-6641-1",
+            "version": "8.4.28-1~deb13u1"
+          },
+          "CVE-2026-129291": {
+            "at": "2026-11-19T14:29:13Z",
+            "advisory": "DSA-6641-1",
+            "version": "8.4.28-1~deb13u1"
+          },
+          "CVE-2026-129292": {
+            "at": "2026-11-19T14:29:13Z",
+            "advisory": "DSA-6641-1",
+            "version": "8.4.28-1~deb13u1"
+          },
+          "CVE-2026-129481": {
+            "at": "2026-11-19T14:29:13Z",
+            "advisory": "DSA-6641-1",
+            "version": "8.4.28-1~deb13u1"
+          },
+          "CVE-2026-129496": {
+            "at": "2026-11-19T14:29:13Z",
+            "advisory": "DSA-6641-1",
+            "version": "8.4.28-1~deb13u1"
+          },
+          "CVE-2026-129501": {
+            "at": "2026-11-19T14:29:13Z",
+            "advisory": "DSA-6641-1",
+            "version": "8.4.28-1~deb13u1"
+          },
+          "CVE-2026-129506": {
+            "at": "2026-11-19T14:29:13Z",
+            "advisory": "DSA-6641-1",
+            "version": "8.4.28-1~deb13u1"
+          },
+          "CVE-2026-129538": {
+            "at": "2026-11-19T14:29:13Z",
+            "advisory": "DSA-6641-1",
+            "version": "8.4.28-1~deb13u1"
+          },
+          "CVE-2026-15353": {
+            "at": "2026-11-19T14:29:13Z",
+            "advisory": "DSA-6641-1",
+            "version": "8.4.28-1~deb13u1"
+          }
+        },
+        "notes": "first_fix = earliest DSA/DLA among the CVEs, all fixed = latest once every affected CVE has one; bookworm is covered by DLA (LTS) once it left regular security support",
+        "cves_fixed": 14,
+        "cves_total": 14,
+        "advisories": [
+          "DSA-6641-1"
+        ],
+        "versions": [
+          "8.4.28-1~deb13u1"
+        ]
+      },
+      "serverpilot-noble": {
+        "first_fix_at": "2026-11-19T22:12:00Z",
+        "first_fix_delay_minutes": 486,
+        "at": "2026-11-19T22:12:00Z",
+        "delay_minutes": 486,
+        "complete": true,
+        "precision": "hourly-poll",
+        "source": "first seen by collector",
+        "per_branch": {
+          "8.2": {
+            "version": "8.2.36-1",
+            "at": "2026-11-19T22:12:00Z",
+            "precision": "hourly-poll",
+            "source": "first seen by collector"
+          },
+          "8.3": {
+            "version": "8.3.37-1",
+            "at": "2026-11-19T22:12:00Z",
+            "precision": "hourly-poll",
+            "source": "first seen by collector"
+          },
+          "8.4": {
+            "version": "8.4.28-1",
+            "at": "2026-11-19T22:12:00Z",
+            "precision": "hourly-poll",
+            "source": "first seen by collector"
+          },
+          "8.5": {
+            "version": "8.5.13-1",
+            "at": "2026-11-19T22:12:00Z",
+            "precision": "hourly-poll",
+            "source": "first seen by collector"
+          }
+        },
+        "notes": "No published timestamps: at is when the collector (or a manual observation) first saw the version. A branch with at=null was already present at the collector's first poll (seen_by)."
+      },
+      "serverpilot-jammy": {
+        "first_fix_at": "2026-11-19T22:12:00Z",
+        "first_fix_delay_minutes": 486,
+        "at": "2026-11-19T22:12:00Z",
+        "delay_minutes": 486,
+        "complete": true,
+        "precision": "hourly-poll",
+        "source": "first seen by collector",
+        "per_branch": {
+          "8.2": {
+            "version": "8.2.36-1",
+            "at": "2026-11-19T22:12:00Z",
+            "precision": "hourly-poll",
+            "source": "first seen by collector"
+          },
+          "8.3": {
+            "version": "8.3.37-1",
+            "at": "2026-11-19T22:12:00Z",
+            "precision": "hourly-poll",
+            "source": "first seen by collector"
+          },
+          "8.4": {
+            "version": "8.4.28-1",
+            "at": "2026-11-19T22:12:00Z",
+            "precision": "hourly-poll",
+            "source": "first seen by collector"
+          },
+          "8.5": {
+            "version": "8.5.13-1",
+            "at": "2026-11-19T22:12:00Z",
+            "precision": "hourly-poll",
+            "source": "first seen by collector"
+          }
+        },
+        "notes": "No published timestamps: at is when the collector (or a manual observation) first saw the version. A branch with at=null was already present at the collector's first poll (seen_by)."
+      },
+      "ondrej-debian-bookworm": {
+        "first_fix_at": "2026-11-19T22:12:00Z",
+        "first_fix_delay_minutes": 486,
+        "at": "2026-11-19T22:12:00Z",
+        "delay_minutes": 486,
+        "complete": true,
+        "precision": "hourly-poll",
+        "source": "first seen by collector",
+        "per_branch": {
+          "8.2": {
+            "version": "8.2.36-2+debsuryorg12.1+php+1",
+            "at": "2026-11-19T22:12:00Z",
+            "precision": "hourly-poll",
+            "source": "first seen by collector"
+          },
+          "8.3": {
+            "version": "8.3.37-2+debsuryorg12.1+php+1",
+            "at": "2026-11-19T22:12:00Z",
+            "precision": "hourly-poll",
+            "source": "first seen by collector"
+          },
+          "8.4": {
+            "version": "8.4.28-2+0~deb.sury.org.1+debian12",
+            "at": "2026-11-19T22:12:00Z",
+            "precision": "hourly-poll",
+            "source": "first seen by collector"
+          },
+          "8.5": {
+            "version": "8.5.13-2+0~deb.sury.org.1+debian12",
+            "at": "2026-11-19T22:12:00Z",
+            "precision": "hourly-poll",
+            "source": "first seen by collector"
+          }
+        },
+        "notes": "No published timestamps: at is when the collector (or a manual observation) first saw the version. A branch with at=null was already present at the collector's first poll (seen_by)."
+      },
+      "ondrej-debian-trixie": {
+        "first_fix_at": "2026-11-19T22:12:00Z",
+        "first_fix_delay_minutes": 486,
+        "at": "2026-11-19T22:12:00Z",
+        "delay_minutes": 486,
+        "complete": true,
+        "precision": "hourly-poll",
+        "source": "first seen by collector",
+        "per_branch": {
+          "8.2": {
+            "version": "8.2.36-2+debsuryorg13.1+php+1",
+            "at": "2026-11-19T22:12:00Z",
+            "precision": "hourly-poll",
+            "source": "first seen by collector"
+          },
+          "8.3": {
+            "version": "8.3.37-2+0~deb.sury.org.1+debian13",
+            "at": "2026-11-19T22:12:00Z",
+            "precision": "hourly-poll",
+            "source": "first seen by collector"
+          },
+          "8.4": {
+            "version": "8.4.28-2+0~deb.sury.org.1+debian13",
+            "at": "2026-11-19T22:12:00Z",
+            "precision": "hourly-poll",
+            "source": "first seen by collector"
+          },
+          "8.5": {
+            "version": "8.5.13-2+0~deb.sury.org.1+debian13",
+            "at": "2026-11-19T22:12:00Z",
+            "precision": "hourly-poll",
+            "source": "first seen by collector"
+          }
+        },
+        "notes": "No published timestamps: at is when the collector (or a manual observation) first saw the version. A branch with at=null was already present at the collector's first poll (seen_by)."
+      }
+    },
+    "php_net_date": "2026-11-19"
+  },
+  {
     "id": "2026-10-21",
     "branches": {
       "8.2": "8.2.35",
