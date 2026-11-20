@@ -541,6 +541,10 @@
       "serverpilot-jammy": "2026-11-14T19:13:00Z",
       "ondrej-debian-bookworm": "2026-11-14T19:13:00Z",
       "ondrej-debian-trixie": "2026-11-14T19:13:00Z"
+    },
+    "2026-10-21": {
+      "ondrej-debian-bookworm": "2026-11-20T21:11:00Z",
+      "ondrej-debian-trixie": "2026-11-20T21:11:00Z"
     }
   }
 }
