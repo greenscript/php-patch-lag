@@ -341,6 +341,11 @@
           "first_seen": "2026-11-19T22:12:00Z",
           "precision": "hourly-poll",
           "source": "first seen by collector"
+        },
+        "8.5.13-2+debsuryorg12.1+php+1": {
+          "first_seen": "2026-11-20T13:00:00Z",
+          "precision": "hourly-poll",
+          "source": "first seen by collector"
         }
       },
       "php8.6-fpm": {
@@ -360,6 +365,11 @@
         },
         "8.6.0-2+0~deb.sury.org.1+debian12": {
           "first_seen": "2026-11-19T22:12:00Z",
+          "precision": "hourly-poll",
+          "source": "first seen by collector"
+        },
+        "8.6.0-2+debsuryorg12.1+php+1": {
+          "first_seen": "2026-11-20T13:00:00Z",
           "precision": "hourly-poll",
           "source": "first seen by collector"
         }
@@ -449,6 +459,11 @@
           "first_seen": "2026-11-19T22:12:00Z",
           "precision": "hourly-poll",
           "source": "first seen by collector"
+        },
+        "8.5.13-2+debsuryorg13.1+php+1": {
+          "first_seen": "2026-11-20T13:00:00Z",
+          "precision": "hourly-poll",
+          "source": "first seen by collector"
         }
       },
       "php8.6-fpm": {
@@ -468,6 +483,11 @@
         },
         "8.6.0-2+0~deb.sury.org.1+debian13": {
           "first_seen": "2026-11-19T22:12:00Z",
+          "precision": "hourly-poll",
+          "source": "first seen by collector"
+        },
+        "8.6.0-2+debsuryorg13.1+php+1": {
+          "first_seen": "2026-11-20T13:00:00Z",
           "precision": "hourly-poll",
           "source": "first seen by collector"
         }
