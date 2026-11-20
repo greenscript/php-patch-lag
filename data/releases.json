@@ -104,9 +104,9 @@
       "ondrej-ubuntu-jammy": {
         "first_fix_at": "2026-11-19T21:37:43Z",
         "first_fix_delay_minutes": 452,
-        "at": "2026-11-19T21:37:43Z",
-        "delay_minutes": 452,
-        "complete": false,
+        "at": "2026-11-19T22:52:44Z",
+        "delay_minutes": 527,
+        "complete": true,
         "precision": "exact",
         "source": "Launchpad getPublishedBinaries, ppa:ondrej/php, php<branch>-fpm amd64, jammy",
         "per_branch": {
@@ -121,6 +121,10 @@
           "8.4": {
             "version": "8.4.28-2+ubuntu22.04.1+deb.sury.org+1",
             "at": "2026-11-19T21:37:43Z"
+          },
+          "8.5": {
+            "version": "8.5.13-2+ubuntu22.04.1+deb.sury.org+1",
+            "at": "2026-11-19T22:52:44Z"
           }
         },
         "notes": "at = latest branch (all branches fixed); per_branch = first amd64 date_published"
@@ -470,6 +474,34 @@
           }
         },
         "notes": "No published timestamps: at is when the collector (or a manual observation) first saw the version. A branch with at=null was already present at the collector's first poll (seen_by)."
+      },
+      "ondrej-ubuntu-noble": {
+        "first_fix_at": "2026-11-19T22:52:44Z",
+        "first_fix_delay_minutes": 527,
+        "at": "2026-11-19T22:52:44Z",
+        "delay_minutes": 527,
+        "complete": true,
+        "precision": "exact",
+        "source": "Launchpad getPublishedBinaries, ppa:ondrej/php, php<branch>-fpm amd64, noble",
+        "per_branch": {
+          "8.2": {
+            "version": "8.2.36-2+ubuntu24.04.1+deb.sury.org+1",
+            "at": "2026-11-19T22:52:44Z"
+          },
+          "8.3": {
+            "version": "8.3.37-2+ubuntu24.04.1+deb.sury.org+1",
+            "at": "2026-11-19T22:52:44Z"
+          },
+          "8.4": {
+            "version": "8.4.28-2+ubuntu24.04.1+deb.sury.org+1",
+            "at": "2026-11-19T22:52:44Z"
+          },
+          "8.5": {
+            "version": "8.5.13-2+ubuntu24.04.1+deb.sury.org+1",
+            "at": "2026-11-19T22:52:44Z"
+          }
+        },
+        "notes": "at = latest branch (all branches fixed); per_branch = first amd64 date_published"
       }
     },
     "php_net_date": "2026-11-19"
