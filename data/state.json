@@ -314,6 +314,11 @@
           "first_seen": "2026-11-19T22:12:00Z",
           "precision": "hourly-poll",
           "source": "first seen by collector"
+        },
+        "8.3.37-3+debsuryorg12.1+1": {
+          "first_seen": "2026-11-21T11:14:00Z",
+          "precision": "hourly-poll",
+          "source": "first seen by collector"
         }
       },
       "php8.4-fpm": {
@@ -335,6 +340,11 @@
           "first_seen": "2026-11-20T03:25:00Z",
           "precision": "hourly-poll",
           "source": "first seen by collector"
+        },
+        "8.4.28-3+debsuryorg12.1+1": {
+          "first_seen": "2026-11-21T11:14:00Z",
+          "precision": "hourly-poll",
+          "source": "first seen by collector"
         }
       },
       "php8.5-fpm": {
@@ -354,6 +364,11 @@
         },
         "8.5.13-2+debsuryorg12.1+php+1": {
           "first_seen": "2026-11-20T13:00:00Z",
+          "precision": "hourly-poll",
+          "source": "first seen by collector"
+        },
+        "8.5.13-3+debsuryorg12.1+1": {
+          "first_seen": "2026-11-21T11:14:00Z",
           "precision": "hourly-poll",
           "source": "first seen by collector"
         }
@@ -380,6 +395,11 @@
         },
         "8.6.0-2+debsuryorg12.1+php+1": {
           "first_seen": "2026-11-20T13:00:00Z",
+          "precision": "hourly-poll",
+          "source": "first seen by collector"
+        },
+        "8.6.0-3+debsuryorg12.1+1": {
+          "first_seen": "2026-11-21T11:14:00Z",
           "precision": "hourly-poll",
           "source": "first seen by collector"
         }
@@ -442,6 +462,11 @@
           "first_seen": "2026-11-20T03:25:00Z",
           "precision": "hourly-poll",
           "source": "first seen by collector"
+        },
+        "8.3.37-3+debsuryorg13.1+1": {
+          "first_seen": "2026-11-21T11:14:00Z",
+          "precision": "hourly-poll",
+          "source": "first seen by collector"
         }
       },
       "php8.4-fpm": {
@@ -463,6 +488,11 @@
           "first_seen": "2026-11-20T03:25:00Z",
           "precision": "hourly-poll",
           "source": "first seen by collector"
+        },
+        "8.4.28-3+debsuryorg13.1+1": {
+          "first_seen": "2026-11-21T11:14:00Z",
+          "precision": "hourly-poll",
+          "source": "first seen by collector"
         }
       },
       "php8.5-fpm": {
@@ -482,6 +512,11 @@
         },
         "8.5.13-2+debsuryorg13.1+php+1": {
           "first_seen": "2026-11-20T13:00:00Z",
+          "precision": "hourly-poll",
+          "source": "first seen by collector"
+        },
+        "8.5.13-3+debsuryorg13.1+1": {
+          "first_seen": "2026-11-21T11:14:00Z",
           "precision": "hourly-poll",
           "source": "first seen by collector"
         }
@@ -508,6 +543,11 @@
         },
         "8.6.0-2+debsuryorg13.1+php+1": {
           "first_seen": "2026-11-20T13:00:00Z",
+          "precision": "hourly-poll",
+          "source": "first seen by collector"
+        },
+        "8.6.0-3+debsuryorg13.1+1": {
+          "first_seen": "2026-11-21T11:14:00Z",
           "precision": "hourly-poll",
           "source": "first seen by collector"
         }
