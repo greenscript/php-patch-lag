@@ -502,6 +502,171 @@
           }
         },
         "notes": "at = latest branch (all branches fixed); per_branch = first amd64 date_published"
+      },
+      "ubuntu-noble": {
+        "first_fix_at": "2026-11-23T16:53:04Z",
+        "first_fix_delay_minutes": 5927,
+        "at": "2026-11-23T16:53:04Z",
+        "delay_minutes": 5927,
+        "complete": true,
+        "precision": "exact",
+        "source": "ubuntu.com/security/cves/<CVE>.json (USN published date); php8.3 on noble",
+        "per_cve": {
+          "CVE-2026-115560": {
+            "at": "2026-11-23T16:53:04Z",
+            "advisory": "USN-9185-1",
+            "version": "8.3.6-0ubuntu0.24.04.14"
+          },
+          "CVE-2026-126714": {
+            "at": "2026-11-23T16:53:04Z",
+            "advisory": "USN-9185-1",
+            "version": "8.3.6-0ubuntu0.24.04.14"
+          },
+          "CVE-2026-127960": {
+            "at": "2026-11-23T16:53:04Z",
+            "advisory": "USN-9185-1",
+            "version": "8.3.6-0ubuntu0.24.04.14"
+          },
+          "CVE-2026-128064": {
+            "at": "2026-11-23T16:53:04Z",
+            "advisory": "USN-9185-1",
+            "version": "8.3.6-0ubuntu0.24.04.14"
+          },
+          "CVE-2026-128090": {
+            "at": "2026-11-23T16:53:04Z",
+            "advisory": "USN-9185-1",
+            "version": "8.3.6-0ubuntu0.24.04.14"
+          },
+          "CVE-2026-129289": {
+            "at": "2026-11-23T16:53:04Z",
+            "advisory": "USN-9185-1",
+            "version": "8.3.6-0ubuntu0.24.04.14"
+          },
+          "CVE-2026-129291": {
+            "at": "2026-11-23T16:53:04Z",
+            "advisory": "USN-9185-1",
+            "version": "8.3.6-0ubuntu0.24.04.14"
+          },
+          "CVE-2026-129292": {
+            "at": "2026-11-23T16:53:04Z",
+            "advisory": "USN-9185-1",
+            "version": "8.3.6-0ubuntu0.24.04.14"
+          },
+          "CVE-2026-129481": {
+            "at": "2026-11-23T16:53:04Z",
+            "advisory": "USN-9185-1",
+            "version": "8.3.6-0ubuntu0.24.04.14"
+          },
+          "CVE-2026-129496": {
+            "at": "2026-11-23T16:53:04Z",
+            "advisory": "USN-9185-1",
+            "version": "8.3.6-0ubuntu0.24.04.14"
+          },
+          "CVE-2026-129506": {
+            "at": "2026-11-23T16:53:04Z",
+            "advisory": "USN-9185-1",
+            "version": "8.3.6-0ubuntu0.24.04.14"
+          },
+          "CVE-2026-129538": {
+            "at": "2026-11-23T16:53:04Z",
+            "advisory": "USN-9185-1",
+            "version": "8.3.6-0ubuntu0.24.04.14"
+          },
+          "CVE-2026-15353": {
+            "at": "2026-11-23T16:53:04Z",
+            "advisory": "USN-9185-1",
+            "version": "8.3.6-0ubuntu0.24.04.14"
+          }
+        },
+        "notes": "Ubuntu backports fixes into its own version. first_fix = earliest USN among the CVEs, all fixed = latest USN once every affected CVE has one",
+        "cves_fixed": 13,
+        "cves_total": 13,
+        "advisories": [
+          "USN-9185-1"
+        ],
+        "versions": [
+          "8.3.6-0ubuntu0.24.04.14"
+        ]
+      },
+      "ubuntu-jammy": {
+        "first_fix_at": "2026-11-23T16:53:04Z",
+        "first_fix_delay_minutes": 5927,
+        "at": "2026-11-23T16:53:04Z",
+        "delay_minutes": 5927,
+        "complete": true,
+        "precision": "exact",
+        "source": "ubuntu.com/security/cves/<CVE>.json (USN published date); php8.1 on jammy",
+        "per_cve": {
+          "CVE-2026-126714": {
+            "at": "2026-11-23T16:53:04Z",
+            "advisory": "USN-9185-1",
+            "version": "8.1.2-1ubuntu2.29"
+          },
+          "CVE-2026-127960": {
+            "at": "2026-11-23T16:53:04Z",
+            "advisory": "USN-9185-1",
+            "version": "8.1.2-1ubuntu2.29"
+          },
+          "CVE-2026-128064": {
+            "at": "2026-11-23T16:53:04Z",
+            "advisory": "USN-9185-1",
+            "version": "8.1.2-1ubuntu2.29"
+          },
+          "CVE-2026-128090": {
+            "at": "2026-11-23T16:53:04Z",
+            "advisory": "USN-9185-1",
+            "version": "8.1.2-1ubuntu2.29"
+          },
+          "CVE-2026-129289": {
+            "at": "2026-11-23T16:53:04Z",
+            "advisory": "USN-9185-1",
+            "version": "8.1.2-1ubuntu2.29"
+          },
+          "CVE-2026-129291": {
+            "at": "2026-11-23T16:53:04Z",
+            "advisory": "USN-9185-1",
+            "version": "8.1.2-1ubuntu2.29"
+          },
+          "CVE-2026-129292": {
+            "at": "2026-11-23T16:53:04Z",
+            "advisory": "USN-9185-1",
+            "version": "8.1.2-1ubuntu2.29"
+          },
+          "CVE-2026-129481": {
+            "at": "2026-11-23T16:53:04Z",
+            "advisory": "USN-9185-1",
+            "version": "8.1.2-1ubuntu2.29"
+          },
+          "CVE-2026-129496": {
+            "at": "2026-11-23T16:53:04Z",
+            "advisory": "USN-9185-1",
+            "version": "8.1.2-1ubuntu2.29"
+          },
+          "CVE-2026-129506": {
+            "at": "2026-11-23T16:53:04Z",
+            "advisory": "USN-9185-1",
+            "version": "8.1.2-1ubuntu2.29"
+          },
+          "CVE-2026-129538": {
+            "at": "2026-11-23T16:53:04Z",
+            "advisory": "USN-9185-1",
+            "version": "8.1.2-1ubuntu2.29"
+          },
+          "CVE-2026-15353": {
+            "at": "2026-11-23T16:53:04Z",
+            "advisory": "USN-9185-1",
+            "version": "8.1.2-1ubuntu2.29"
+          }
+        },
+        "notes": "Ubuntu backports fixes into its own version. first_fix = earliest USN among the CVEs, all fixed = latest USN once every affected CVE has one",
+        "cves_fixed": 12,
+        "cves_total": 12,
+        "advisories": [
+          "USN-9185-1"
+        ],
+        "versions": [
+          "8.1.2-1ubuntu2.29"
+        ]
       }
     },
     "php_net_date": "2026-11-19"
